@@ -4,11 +4,15 @@ class Header extends React.Component {
 
   render() {
     return (
-        <div>
-            <h1>This would be my Header</h1>
-            <h2> This would be my sub</h2>
+      <div className="row">
+        <img className="topl" src={littlePenguin} alt="penguin"></img>
+        
+        <h1> Nailing It To Do List !</h1>
+        
+        <img className="topr" src={"https://cdn.pixabay.com/photo/2016/03/31/17/51/animal-1293952_1280.png"}
+            alt="penguin"> </img>
         </div>
-    );
-  }
-}
-export default Header;
+          );
+        }
+      }
+export default Header
