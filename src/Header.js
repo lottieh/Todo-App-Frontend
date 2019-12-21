@@ -1,5 +1,5 @@
 import React from 'react';
-
+import littlePenguin from './littlePenguin.png';
 class Header extends React.Component {
 
   render() {
@@ -9,8 +9,7 @@ class Header extends React.Component {
         
         <h1> Nailing It To Do List !</h1>
         
-        <img className="topr" src={"https://cdn.pixabay.com/photo/2016/03/31/17/51/animal-1293952_1280.png"}
-            alt="penguin"> </img>
+        <img className="topl" src={littlePenguin} alt="penguin"></img>
         </div>
           );
         }

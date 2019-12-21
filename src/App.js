@@ -1,7 +1,8 @@
 import React from 'react';
-import littlePenguin from './littlePenguin.png;
+import littlePenguin from './littlePenguin.png';
 import './App.css';
 import Header from './Header'; 
+import InsertionSectionTask from './InsertionSectionTask';
 
 class App extends React.Component {
 
@@ -10,7 +11,8 @@ class App extends React.Component {
       <div className='container'>
         
         <Header/>
-        <p>writing </p>
+        <InsertionSectionTask/>
+        
       
       </div>
     );
