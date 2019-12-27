@@ -14,6 +14,10 @@ import ImportantButton from './ImportantButton';
 import SmashedItButton from './SmashedItButton';
 import TimedTasksHeader from './TimedTasksHeader';
 import DateDue from './DateDue';
+import Date from './Date';
+import TasksSmashedHeader from './TasksSmashedHeader';
+import TaskDone from './TaskDone';
+import Loading from './Loading';
 
 class App extends React.Component {
 
@@ -21,7 +25,7 @@ class App extends React.Component {
     return (
       <div className='container'>
         <Header />
-       <div className='row'>
+        <div className='row'>
           <InsertionSectionTask />
           <InsertionSectionTaskForm />
           <InsertionSectionDate />
@@ -29,12 +33,6 @@ class App extends React.Component {
           <InsertionSectionSubmit />
         </div>
         <UndatedTaskstoDoHeader />
-       <div className='row'>
-          <Tasks />
-          <EditButton />
-          <ImportantButton />
-          <SmashedItButton />
-        </div>
         <div className='row'>
           <Tasks />
           <EditButton />
@@ -47,17 +45,46 @@ class App extends React.Component {
           <ImportantButton />
           <SmashedItButton />
         </div>
+        <div className='row'>
+          <Tasks />
+          <EditButton />
+          <ImportantButton />
+          <SmashedItButton />
+        </div>
 
-<TimedTasksHeader/>
-<DateDue/>
+        <TimedTasksHeader />
+        <DateDue />
+        <div className="row">
+          <Date />
+          <Tasks />
+          <EditButton />
+          <ImportantButton />
+          <SmashedItButton />
+        </div>
 
+        <div className="row">
+          <Date />
+          <Tasks />
+          <EditButton />
+          <ImportantButton />
+          <SmashedItButton />
+        </div>
 
-
-
+        <TasksSmashedHeader/>
+<div className= 'row'>
+  <ul>
+    <TaskDone/>
+    <TaskDone/>
+    <TaskDone/>
+    <TaskDone/>
+    <TaskDone/>
+<Loading/>
+  </ul>
 </div>
-    
+      </div>
 
-        );
-      }
-    }
-    export default App;
+
+    );
+  }
+}
+export default App;
