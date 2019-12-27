@@ -18,6 +18,7 @@ import Date from './Date';
 import TasksSmashedHeader from './TasksSmashedHeader';
 import TaskDone from './TaskDone';
 import Loading from './Loading';
+import NailingItPenguin from './NailingItPenguin';
 
 class App extends React.Component {
 
@@ -80,6 +81,8 @@ class App extends React.Component {
     <TaskDone/>
 <Loading/>
   </ul>
+
+  <NailingItPenguin/>
 </div>
       </div>
 
