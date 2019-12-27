@@ -33,7 +33,8 @@ class App extends React.Component {
           <InsertionSectionSubmit />
         </div>
         <UndatedTaskstoDoHeader />
-        <div className = Untimed_Task>
+        
+        <div className = "Bordered">
         <div className='row'>
           <Tasks />
           <EditButton />
@@ -55,7 +56,9 @@ class App extends React.Component {
 </div>
 
         <TimedTasksHeader />
-        <DateDue />
+        <div className= "Bordered">
+          <DateDue />
+        
         <div className="row">
           <Date />
           <Tasks />
@@ -71,9 +74,9 @@ class App extends React.Component {
           <ImportantButton />
           <SmashedItButton />
         </div>
-
+</div>
         <TasksSmashedHeader/>
-<div className= 'row'>
+<div className= 'row Bordered'>
   <ul>
     <TaskDone/>
     <TaskDone/>
