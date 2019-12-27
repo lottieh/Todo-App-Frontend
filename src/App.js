@@ -7,6 +7,11 @@ import InsertionSectionDate from './InsertionSectionDate';
 import InsertionDateform from './InsertionDateform';
 import InsertionSectionTaskForm from './InsertionSectionTaskForm';
 import InsertionSectionSubmit from './InsertionSectionSubmit';
+import UndatedTaskstoDoHeader from './UndatedTasksToDoHeader';
+import Tasks from './Tasks';
+import EditButton from './EditButton';
+import ImportantButton from './ImportantButton';
+import SmashedItButton from './SmashedItButton';
 
 class App extends React.Component {
 
@@ -22,7 +27,26 @@ class App extends React.Component {
         <InsertionDateform/>
         <InsertionSectionSubmit/>
       </div>
-      
+      <UndatedTaskstoDoHeader/>
+<div className= 'row'>
+  <Tasks/>
+  <EditButton/>
+  <ImportantButton/>
+  <SmashedItButton/>
+</div>
+<div className= 'row'>
+  <Tasks/>
+  <EditButton/>
+  <ImportantButton/>
+  <SmashedItButton/>
+</div>
+<div className= 'row'>
+  <Tasks/>
+  <EditButton/>
+  <ImportantButton/>
+  <SmashedItButton/>
+</div>
+
       
       </div>
     );
