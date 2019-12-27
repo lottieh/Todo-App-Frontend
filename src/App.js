@@ -1,6 +1,5 @@
 import React from 'react';
-import littlePenguin from './littlePenguin.png';
-import './App.css';
+import './Style.css';
 import Header from './Header';
 import InsertionSectionTask from './InsertionSectionTask';
 import InsertionSectionDate from './InsertionSectionDate';
@@ -26,7 +25,7 @@ class App extends React.Component {
     return (
       <div className='container'>
         <Header />
-        <div className='row'>
+        <div className='row Insertion_Section'>
           <InsertionSectionTask />
           <InsertionSectionTaskForm />
           <InsertionSectionDate />
@@ -34,6 +33,7 @@ class App extends React.Component {
           <InsertionSectionSubmit />
         </div>
         <UndatedTaskstoDoHeader />
+        <div className = Untimed_Task>
         <div className='row'>
           <Tasks />
           <EditButton />
@@ -52,6 +52,7 @@ class App extends React.Component {
           <ImportantButton />
           <SmashedItButton />
         </div>
+</div>
 
         <TimedTasksHeader />
         <DateDue />

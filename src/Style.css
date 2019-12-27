@@ -1,0 +1,98 @@
+
+body{
+    background-color:#272727;
+    color:#5cdb95;
+    font-family:'Annie Use Your Telescope',cursive;
+    font-size: 18pt;
+    overflow-x: hidden;
+ }
+ h1 { 
+     border-style:dotted;
+     height: 60px;
+     vertical-align: middle;
+     display:table-cell;
+     border-radius: 1em 4em 1em 4em/1em 4em 1em 4em ;
+     text-align: center;
+     width: 500px;
+     margin: 30px auto;
+     background-color:darkcyan;
+     Padding: 0px 20px 0px 20px 
+ }
+ 
+ h2 {
+     width: 300px;
+     border-style:dotted;
+     border-radius: 1em 4em 1em 4em/1em 4em 1em 4em ;
+     text-align: center;
+     margin: 30px auto;
+     background-color:darkcyan;
+     Padding: 0px 20px 0px 20px 
+ }
+ 
+ .topl {
+     width:82px;
+     height:75px;
+     margin-left: 150px; 
+ }
+ .topr {
+     width:82px;
+     height:75px;
+     margin-right: 150px; 
+ }
+ 
+ .Insertion_Section {
+     border-style: dotted;
+     border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
+     Padding: 10px 10px 10px 10px;
+     margin: auto 60px; 
+ }
+ .insert-col-2 {
+     font-size:14pt;
+     
+ 
+ }
+     
+ .table {
+     margin: auto 60px; 
+     text-align: center;
+     border-style: dotted;
+     color:#5cdb95;
+     border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
+     Padding: 20px 30px 20px 30px; 
+ }  
+ 
+ .table2 {
+     margin: auto 60px; 
+     text-align: center;
+     border-style: dotted;
+     color:#5cdb95;
+     border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
+     Padding: 20px 20px 20px 20px; 
+ }  
+ input {
+     border-style: dotted;
+     border-radius: 1em 4em 1em 4em/1em 4em 1em 4em ;
+     border-color: #5cdb95;
+     background-color: darkcyan;
+     padding:0px 15px 0px 15px;
+     font-weight: bold; 
+     font-size: 18px; 
+     color:#5cdb95;
+     background-color:darkcyan;
+     -webkit-transition-duration: 0.4s;
+     transition-duration: 0.4s;
+ }
+ 
+ input:hover {
+     background-color:#bd67c9;
+ }
+ 
+ #due-date {
+     float: centre;
+     text-decoration:underline;
+ }
+ 
+ #penguin_image {
+     float: centre;
+ }
+ 
