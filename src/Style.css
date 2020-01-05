@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Annie%20Use%20Your%20Telescope);
 
-
+.container{
+    max-width: 100%;
+}
 body{
     background-color:#272727;
     color:#5cdb95;
@@ -42,17 +44,15 @@ body{
      margin-right: 150px; 
  }
  
- .Insertion_Section {
+ /* .Insertion_Section {
      border-style: dotted;
      border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
      Padding: 10px 10px 10px 10px;
      margin: auto 60px; 
- }
- .insert-col-2 {
+ } */
+ /* .insert-col-2 {
      font-size:14pt;
-     
- 
- }
+      } */
      
  .Bordered {
      margin: auto 60px; 
