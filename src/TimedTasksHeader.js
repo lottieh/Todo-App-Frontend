@@ -9,7 +9,7 @@ class TimedTasksHeader extends React.Component {
         
         <h1> Timed Tasks to Do: 2</h1>
         
-        <img className="topl" src={littlePenguin} alt="penguin"></img>
+        <img className="topr" src={littlePenguin} alt="penguin"></img>
         </div>
           );
         }

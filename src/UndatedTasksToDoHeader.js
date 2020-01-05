@@ -1,6 +1,6 @@
 import React from 'react';
 import littlePenguin from './littlePenguin.png';
-class Header extends React.Component {
+class UndatedTasksToDoHeader extends React.Component {
 
   render() {
     return (
@@ -9,9 +9,9 @@ class Header extends React.Component {
         
         <h1> Tasks to do: 3 </h1>
         
-        <img className="topl" src={littlePenguin} alt="penguin"></img>
+        <img className="topr" src={littlePenguin} alt="penguin"></img>
         </div>
           );
         }
       }
-export default Header
+export default UndatedTasksToDoHeader

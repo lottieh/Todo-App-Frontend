@@ -18,13 +18,19 @@ import TasksSmashedHeader from './TasksSmashedHeader';
 import TaskDone from './TaskDone';
 import Loading from './Loading';
 import NailingItPenguin from './NailingItPenguin';
+import Toplpenguin from './Leftpenguin';
+import RightPenguin from './RightPenguin';
 
 class App extends React.Component {
 
   render() {
     return (
       <div className='container'>
+       {/* <div className="row Topheader">
+        <Toplpenguin /> */}
         <Header />
+        {/* <RightPenguin />
+</div> */}
         <div className='content'>
           <div className='row Insertion_Section'>
             <InsertionSectionTask />
@@ -84,7 +90,7 @@ class App extends React.Component {
           
           <TasksSmashedHeader />
           
-          <div className='Bordered col-12 col-md-6'>
+          <div className='Bordered'>
             
             <ul>
               <TaskDone />

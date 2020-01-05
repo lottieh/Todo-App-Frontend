@@ -10,20 +10,17 @@
      border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
      Padding: 10px 10px 10px 10px;
      margin: auto 60px;
-     display: flex;
-    justify-content: center;
- }
 
+ }
+.Topheader {display: grid;
+    justify-content: center;
+    }
 body{
     background-color:#272727;
     color:#5cdb95;
     font-family:'Annie Use Your Telescope',cursive;
     font-size: 16pt;
-    
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-       
+           
 }
     
  h1 { 
@@ -57,7 +54,7 @@ body{
  .topr {
      width:82px;
      height:75px;
-     margin-right: 300px; 
+     margin-right: 200px; 
  }
  
  .Insertion_Section {
@@ -75,6 +72,9 @@ body{
      border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
      Padding: 20px 30px 20px 30px; 
      float: centre;
+     display: grid;
+    justify-content: center;
+    
  }  
  
  .Timed_Task {

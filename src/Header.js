@@ -9,7 +9,7 @@ class Header extends React.Component {
         
         <h1> Nailing It To Do List !</h1>
         
-        <img className="topl" src={littlePenguin} alt="penguin"></img>
+        <img className="topr" src={littlePenguin} alt="penguin"></img>
         </div>
           );
         }
