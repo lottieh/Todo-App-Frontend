@@ -2,14 +2,24 @@
 
 .container{
     max-width: 100%;
-}
+    
+    }
+
+    /* .content {
+    border-style: dotted;
+     border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
+     Padding: 10px 10px 10px 10px;
+     margin: auto 60px;
+ } */
+
 body{
     background-color:#272727;
     color:#5cdb95;
     font-family:'Annie Use Your Telescope',cursive;
-    font-size: 18pt;
-    overflow-x: hidden;
- }
+    font-size: 16pt;
+       
+}
+    
  h1 { 
      border-style:dotted;
      height: 60px;
@@ -36,12 +46,12 @@ body{
  .topl {
      width:82px;
      height:75px;
-     margin-left: 150px; 
+     margin-left: 200px; 
  }
  .topr {
      width:82px;
      height:75px;
-     margin-right: 150px; 
+     margin-right: 300px; 
  }
  
  /* .Insertion_Section {
@@ -61,6 +71,7 @@ body{
      color:#5cdb95;
      border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
      Padding: 20px 30px 20px 30px; 
+     float: centre;
  }  
  
  .Timed_Task {
@@ -94,7 +105,7 @@ body{
      text-decoration:underline;
  }
  
- NailingItPenguin {
+ .NailingItPenguin {
      float: centre;
  }
  

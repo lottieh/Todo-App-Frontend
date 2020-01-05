@@ -25,73 +25,83 @@ class App extends React.Component {
     return (
       <div className='container'>
         <Header />
-        <div className='row Insertion_Section'>
-          <InsertionSectionTask />
-          <InsertionSectionTaskForm />
-          <InsertionSectionDate />
-          <InsertionDateform />
-          <InsertionSectionSubmit />
-        </div>
-        <UndatedTaskstoDoHeader />
-        
-        <div className = "Bordered">
-        <div className='row'>
-          <Tasks />
-          <EditButton />
-          <ImportantButton />
-          <SmashedItButton />
-        </div>
-        <div className='row'>
-          <Tasks />
-          <EditButton />
-          <ImportantButton />
-          <SmashedItButton />
-        </div>
-        <div className='row'>
-          <Tasks />
-          <EditButton />
-          <ImportantButton />
-          <SmashedItButton />
-        </div>
-</div>
+        <div className='content'>
+          <div className='row Insertion_Section'>
+            <InsertionSectionTask />
+            <InsertionSectionTaskForm />
+            <InsertionSectionDate />
+            <InsertionDateform />
+            <InsertionSectionSubmit />
+          </div>
 
-        <TimedTasksHeader />
-        <div className= "Bordered">
-          <DateDue />
-        
-        <div className="row">
-          <Date />
-          <Tasks />
-          <EditButton />
-          <ImportantButton />
-          <SmashedItButton />
-        </div>
+          <UndatedTaskstoDoHeader />
 
-        <div className="row">
-          <Date />
-          <Tasks />
-          <EditButton />
-          <ImportantButton />
-          <SmashedItButton />
-        </div>
-</div>
-        <TasksSmashedHeader/>
-<div className= 'row Bordered'>
-  <ul>
-    <TaskDone/>
-    <TaskDone/>
-    <TaskDone/>
-    <TaskDone/>
-    <TaskDone/>
-<Loading/>
-  </ul>
+          <div className="Bordered">
 
-  <NailingItPenguin/>
-</div>
+            <div className='row'>
+              <Tasks />
+              <EditButton />
+              <ImportantButton />
+              <SmashedItButton />
+            </div>
+
+            <div className='row'>
+              <Tasks />
+              <EditButton />
+              <ImportantButton />
+              <SmashedItButton />
+            </div>
+
+            <div className='row'>
+              <Tasks />
+              <EditButton />
+              <ImportantButton />
+              <SmashedItButton />
+            </div>
+          </div>
+
+          <TimedTasksHeader />
+          <div className="Bordered">
+            <DateDue />
+
+            <div className="row">
+              <Date />
+              <Tasks />
+              <EditButton />
+              <ImportantButton />
+              <SmashedItButton />
+            </div>
+
+            <div className="row">
+              <Date />
+              <Tasks />
+              <EditButton />
+              <ImportantButton />
+              <SmashedItButton />
+            </div>
+          
+          </div>
+          
+          <TasksSmashedHeader />
+          
+          <div className='Bordered col-12 col-md-6'>
+            
+            <ul>
+              <TaskDone />
+              <TaskDone />
+              <TaskDone />
+              <TaskDone />
+              <TaskDone />
+              <Loading />
+           
+            </ul>
+           
+            <NailingItPenguin />
+         
+          </div>
+        </div>
       </div>
-
-
-    );
+    )
   }
 }
 export default App;
