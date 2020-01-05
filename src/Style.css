@@ -2,21 +2,27 @@
 
 .container{
     max-width: 100%;
-    
+        
     }
 
-    /* .content {
+    .content {
     border-style: dotted;
      border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
      Padding: 10px 10px 10px 10px;
      margin: auto 60px;
- } */
+     display: flex;
+    justify-content: center;
+ }
 
 body{
     background-color:#272727;
     color:#5cdb95;
     font-family:'Annie Use Your Telescope',cursive;
     font-size: 16pt;
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
        
 }
     
@@ -54,15 +60,12 @@ body{
      margin-right: 300px; 
  }
  
- /* .Insertion_Section {
+ .Insertion_Section {
      border-style: dotted;
      border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
      Padding: 10px 10px 10px 10px;
      margin: auto 60px; 
- } */
- /* .insert-col-2 {
-     font-size:14pt;
-      } */
+ }
      
  .Bordered {
      margin: auto 60px; 

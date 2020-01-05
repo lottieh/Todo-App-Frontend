@@ -5,7 +5,7 @@ class InsertionDateform extends React.Component {
     render() {
         return (
            
-                <div className="insert-col-4 col-6 col-md-2">
+                <div className="insert-col-4 Col sm={6}">
                     <form action="/action_page.php">
                         <input type="date" name="completionDate"/>
                     </form>
