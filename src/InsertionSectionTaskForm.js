@@ -10,7 +10,7 @@ class InsertionSectionTaskForm extends React.Component {
                         <input type="text" name="task" placeholder="Task to be done!"/>
                     </form>
                     
-                    <small id="taskHelp" class="form-text text-muted">
+                    <small id="taskHelp" className="form-text text-muted">
                         Please enter the task that you need to do.
                     </small>
                 </div>

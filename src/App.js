@@ -26,13 +26,13 @@ class App extends React.Component {
   render() {
     return (
       <div className='container'>
-       <div className='row'>
-         <Leftpenguin />
-         <Header />
-         <RightPenguin />
-       </div>
-      
-        
+        <div className='row'>
+          <Leftpenguin />
+          <Header />
+          <RightPenguin />
+        </div>
+
+
         <div className='content'>
           <div className='row Insertion_Section'>
             <InsertionSectionTask />
@@ -42,7 +42,13 @@ class App extends React.Component {
             <InsertionSectionSubmit />
           </div>
 
-          <UndatedTaskstoDoHeader />
+
+          <div className='row'>
+            <Leftpenguin />
+            <UndatedTaskstoDoHeader />
+            <RightPenguin />
+          </div>
+
 
           <div className="Bordered">
 
@@ -68,7 +74,13 @@ class App extends React.Component {
             </div>
           </div>
 
-          <TimedTasksHeader />
+          <div className='row'>
+            <Leftpenguin />
+            <TimedTasksHeader />
+            <RightPenguin />
+          </div>
+
+
           <div className="Bordered">
             <DateDue />
 
@@ -87,13 +99,17 @@ class App extends React.Component {
               <ImportantButton />
               <SmashedItButton />
             </div>
-          
+
+          </div>
+
+          <div className='row'>
+            <Leftpenguin />
+           <TasksSmashedHeader />
+            <RightPenguin />
           </div>
           
-          <TasksSmashedHeader />
-          
           <div className='Bordered'>
-            
+
             <ul>
               <TaskDone />
               <TaskDone />
@@ -101,11 +117,11 @@ class App extends React.Component {
               <TaskDone />
               <TaskDone />
               <Loading />
-           
+
             </ul>
-           
+
             <NailingItPenguin />
-         
+
           </div>
         </div>
       </div>
