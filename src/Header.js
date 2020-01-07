@@ -4,7 +4,7 @@ class Header extends React.Component {
   render() {
     return (
 
-      <h1 className="col-4">
+      <h1 className="col-12 col-m-4">
         Nailing It To Do List !
       </h1>
 

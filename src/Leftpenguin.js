@@ -4,7 +4,7 @@ class Leftpenguin extends React.Component {
 
     render() {
         return (
-            <div className=" col-4 d-none ">
+            <div className=" hidden=col-m-down col-md-4">
 
             <img className="topl" src={littlePenguin} alt="penguin"></img>
         </div>

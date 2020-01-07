@@ -5,7 +5,7 @@ class InsertionSectionTaskForm extends React.Component {
     render() {
         return (
             <div>
-                <div className="insert-col-3 Col sm={6}" >
+                <div className=" Col-sm-6" >
                     <form action="/action_page.php">
                         <input type="text" name="task" placeholder="Task to be done!"/>
                     </form>

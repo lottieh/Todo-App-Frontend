@@ -20,19 +20,15 @@ import Loading from './Loading';
 import NailingItPenguin from './NailingItPenguin';
 import Leftpenguin from './Leftpenguin';
 import RightPenguin from './RightPenguin';
+import Topheader from './TopHeader';
 
 class App extends React.Component {
 
   render() {
     return (
       <div className='container'>
-        <div className='row'>
-          <Leftpenguin />
-          <Header />
-          <RightPenguin />
-        </div>
-
-
+        <Topheader />
+      
         <div className='content'>
           <div className='row Insertion_Section'>
             <InsertionSectionTask />
