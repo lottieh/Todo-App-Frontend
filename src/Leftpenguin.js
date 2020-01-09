@@ -4,10 +4,15 @@ class Leftpenguin extends React.Component {
 
     render() {
         return (
-            
-            <img className="topl d-none d-md-block" src={littlePenguin} alt="penguin"></img>
-
-        );
-    }
-}
-export default Leftpenguin
+        
+        <div classname="d-none d-md-4">
+             
+        <img className="topl" src={littlePenguin} alt="penguin"></img>
+         
+         </div>
+          
+          );
+        }
+      }
+      
+      export default Leftpenguin;

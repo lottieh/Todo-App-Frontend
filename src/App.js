@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <div className='container'>
         <Headernest />
-      
+
         <div className='content'>
           <div className='row Insertion_Section'>
             <InsertionSectionTask />
@@ -47,24 +47,24 @@ class App extends React.Component {
           <UndatedTasksToDoHeadernest />
 
           <div className="Bordered">
-<Taskline />
-<Taskline />
-<Taskline />
+            <Taskline />
+            <Taskline />
+            <Taskline />
 
-            </div>
+          </div>
 
-         <TimedTasksHeadernest />
-         
-              <div className="Bordered">
+          <TimedTasksHeadernest />
+
+          <div className="Bordered">
             <DateDue />
 
             <Datedtaskline />
             <Datedtaskline />
-            
+
           </div>
 
           <TasksSmashedHeadernest />
-          
+
           <div className='Bordered'>
 
             <ul>
