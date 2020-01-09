@@ -1,7 +1,7 @@
 import React from 'react';
-import Leftpenguin from './Leftpenguin';
-import UndatedTasksToDoHeader from './UndatedTasksToDoHeader';
-import RightPenguin from './RightPenguin';
+import Leftpenguin from '../1stlvl/Leftpenguin';
+import UndatedTasksToDoHeader from '../1stlvl/UndatedTasksToDoHeader';
+import RightPenguin from '../1stlvl/RightPenguin';
 
 class UndatedTasksToDoHeadernest extends React.Component {
 

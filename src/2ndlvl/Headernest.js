@@ -1,7 +1,7 @@
 import React from 'react';
-import Leftpenguin from './Leftpenguin';
-import Header from './Header';
-import RightPenguin from './RightPenguin';
+import Leftpenguin from '../1stlvl/Leftpenguin';
+import Header from '../1stlvl/Header';
+import RightPenguin from '../1stlvl/RightPenguin';
 
 class Headernest extends React.Component {
 

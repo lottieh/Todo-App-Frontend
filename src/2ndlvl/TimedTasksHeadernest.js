@@ -1,7 +1,7 @@
 import React from 'react';
-import Leftpenguin from './Leftpenguin';
-import TimedTasksHeader from './TimedTasksHeader';
-import RightPenguin from './RightPenguin';
+import Leftpenguin from '../1stlvl/Leftpenguin';
+import TimedTasksHeader from '../1stlvl/TimedTasksHeader';
+import RightPenguin from '../1stlvl/RightPenguin';
 class TimedTasksHeadernest extends React.Component {
 
   render() {

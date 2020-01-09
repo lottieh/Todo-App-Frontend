@@ -1,31 +1,35 @@
 import React from 'react';
 import './Style.css';
-import Header from './Header';
-import InsertionSectionTask from './InsertionSectionTask';
-import InsertionSectionDate from './InsertionSectionDate';
-import InsertionDateform from './InsertionDateform';
-import InsertionSectionTaskForm from './InsertionSectionTaskForm';
-import InsertionSectionSubmit from './InsertionSectionSubmit';
-import UndatedTaskstoDoHeader from './UndatedTasksToDoHeader';
-import Tasks from './Tasks';
-import EditButton from './EditButton';
-import ImportantButton from './ImportantButton';
-import SmashedItButton from './SmashedItButton';
-import TimedTasksHeader from './TimedTasksHeader';
-import DateDue from './DateDue';
-import Date from './Date';
-import TasksSmashedHeader from './TasksSmashedHeader';
-import TaskDone from './TaskDone';
-import Loading from './Loading';
-import NailingItPenguin from './NailingItPenguin';
-import Leftpenguin from './Leftpenguin';
-import RightPenguin from './RightPenguin';
-import Headernest from './Headernest';
-import UndatedTasksToDoHeadernest from './UndatedTasksToDoHeadernest';
-import Taskline from './Taskline';
-import Datedtaskline from './Datedtaskline';
-import TimedTasksHeadernest from './TimedTasksHeadernest';
-import TasksSmashedHeadernest from './TasksSmashedHeadernest';
+import Header from './1stlvl/Header';
+import InsertionSectionTask from './1stlvl/InsertionSectionTask';
+import InsertionSectionDate from './1stlvl/InsertionSectionDate';
+import InsertionDateform from './1stlvl/InsertionDateform';
+import InsertionSectionTaskForm from './1stlvl/InsertionSectionTaskForm';
+import InsertionSectionSubmit from './1stlvl/InsertionSectionSubmit';
+import UndatedTaskstoDoHeader from './1stlvl/UndatedTasksToDoHeader';
+import Tasks from './1stlvl/Tasks';
+import EditButton from './1stlvl/EditButton';
+import ImportantButton from './1stlvl/ImportantButton';
+import SmashedItButton from './1stlvl/SmashedItButton';
+import TimedTasksHeader from './1stlvl/TimedTasksHeader';
+import DateDue from './1stlvl/DateDue';
+import Date from './1stlvl/Date';
+import TasksSmashedHeader from './1stlvl/TasksSmashedHeader';
+import TaskDone from './1stlvl/TaskDone';
+import Loading from './1stlvl/Loading';
+import NailingItPenguin from './1stlvl/NailingItPenguin';
+import Leftpenguin from './1stlvl/Leftpenguin';
+import RightPenguin from './1stlvl/RightPenguin';
+import Headernest from './2ndlvl/Headernest';
+import UndatedTasksToDoHeadernest from './2ndlvl/UndatedTasksToDoHeadernest';
+import Taskline from './2ndlvl/Taskline';
+import Datedtaskline from './2ndlvl/Datedtaskline';
+import TimedTasksHeadernest from './2ndlvl/TimedTasksHeadernest';
+import TasksSmashedHeadernest from './2ndlvl/TasksSmashedHeadernest';
+import Insertionsection from './2ndlvl/Insertionsection';
+import Tasklist from '.3rdlvl/Tasklist';
+import Donetasklist from './3rdlvl/Donetasklist';
+import Datedtasklist from './3rdlvl/Datedtasklist';
 
 class App extends React.Component {
 
@@ -35,53 +39,24 @@ class App extends React.Component {
         <Headernest />
 
         <div className='content'>
-          <div className='row Insertion_Section'>
-            <InsertionSectionTask />
-            <InsertionSectionTaskForm />
-            <InsertionSectionDate />
-            <InsertionDateform />
-            <InsertionSectionSubmit />
-          </div>
-
+          <Insertionsection />
 
           <UndatedTasksToDoHeadernest />
 
-          <div className="Bordered">
-            <Taskline />
-            <Taskline />
-            <Taskline />
-
-          </div>
+          <Tasklist />
 
           <TimedTasksHeadernest />
 
-          <div className="Bordered">
-            <DateDue />
-
-            <Datedtaskline />
-            <Datedtaskline />
-
-          </div>
+          <Datedtasklist />
 
           <TasksSmashedHeadernest />
 
-          <div className='Bordered'>
-
-            <ul>
-              <TaskDone />
-              <TaskDone />
-              <TaskDone />
-              <TaskDone />
-              <TaskDone />
-              <Loading />
-
-            </ul>
+         <Donetasklist />
 
             <NailingItPenguin />
 
           </div>
         </div>
-      </div>
     )
   }
 }

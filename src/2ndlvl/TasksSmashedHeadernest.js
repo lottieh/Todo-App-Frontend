@@ -1,7 +1,7 @@
 import React from 'react';
-import Leftpenguin from './Leftpenguin';
-import TasksSmashedHeader from './TasksSmashedHeader';
-import RightPenguin from './RightPenguin';
+import Leftpenguin from '../1stlvl/Leftpenguin';
+import TasksSmashedHeader from '../1stlvl/TasksSmashedHeader';
+import RightPenguin from '../1stlvl/RightPenguin';
 class TasksSmashedHeadernest extends React.Component {
 
   render() {

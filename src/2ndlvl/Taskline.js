@@ -1,8 +1,8 @@
 import React from 'react';
-import Tasks from './Tasks';
-import ImportantButton from './ImportantButton';
-import EditButton from './EditButton';
-import SmashedItButton from './SmashedItButton';
+import Tasks from '../1stlvl/Tasks';
+import ImportantButton from '../1stlvl/ImportantButton';
+import EditButton from '../1stlvl/EditButton';
+import SmashedItButton from '../1stlvl/SmashedItButton';
 class Taskline extends React.Component {
 
   render() {
