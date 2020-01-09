@@ -20,14 +20,19 @@ import Loading from './Loading';
 import NailingItPenguin from './NailingItPenguin';
 import Leftpenguin from './Leftpenguin';
 import RightPenguin from './RightPenguin';
-import Topheader from './TopHeader';
+import Headernest from './Headernest';
+import UndatedTasksToDoHeadernest from './UndatedTasksToDoHeadernest';
+import Taskline from './Taskline';
+import Datedtaskline from './Datedtaskline';
+import TimedTasksHeadernest from './TimedTasksHeadernest';
+import TasksSmashedHeadernest from './TasksSmashedHeadernest';
 
 class App extends React.Component {
 
   render() {
     return (
       <div className='container'>
-        <Topheader />
+        <Headernest />
       
         <div className='content'>
           <div className='row Insertion_Section'>
@@ -39,70 +44,26 @@ class App extends React.Component {
           </div>
 
 
-          <div className='row'>
-            <Leftpenguin />
-            <UndatedTaskstoDoHeader />
-            <RightPenguin />
-          </div>
-
+          <UndatedTasksToDoHeadernest />
 
           <div className="Bordered">
+<Taskline />
+<Taskline />
+<Taskline />
 
-            <div className='row'>
-              <Tasks />
-              <EditButton />
-              <ImportantButton />
-              <SmashedItButton />
             </div>
 
-            <div className='row'>
-              <Tasks />
-              <EditButton />
-              <ImportantButton />
-              <SmashedItButton />
-            </div>
-
-            <div className='row'>
-              <Tasks />
-              <EditButton />
-              <ImportantButton />
-              <SmashedItButton />
-            </div>
-          </div>
-
-          <div className='row'>
-            <Leftpenguin />
-            <TimedTasksHeader />
-            <RightPenguin />
-          </div>
-
-
-          <div className="Bordered">
+         <TimedTasksHeadernest />
+         
+              <div className="Bordered">
             <DateDue />
 
-            <div className="row">
-              <Date />
-              <Tasks />
-              <EditButton />
-              <ImportantButton />
-              <SmashedItButton />
-            </div>
-
-            <div className="row">
-              <Date />
-              <Tasks />
-              <EditButton />
-              <ImportantButton />
-              <SmashedItButton />
-            </div>
-
+            <Datedtaskline />
+            <Datedtaskline />
+            
           </div>
 
-          <div className='row'>
-            <Leftpenguin />
-           <TasksSmashedHeader />
-            <RightPenguin />
-          </div>
+          <TasksSmashedHeadernest />
           
           <div className='Bordered'>
 

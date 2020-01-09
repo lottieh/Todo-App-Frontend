@@ -4,10 +4,9 @@ class Leftpenguin extends React.Component {
 
     render() {
         return (
-            <div className=" hidden=col-m-down col-md-4">
+            
+            <img className="topl d-none d-md-block" src={littlePenguin} alt="penguin"></img>
 
-            <img className="topl" src={littlePenguin} alt="penguin"></img>
-        </div>
         );
     }
 }

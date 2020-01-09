@@ -1,7 +1,8 @@
 import React from 'react';
 class Header extends React.Component {
 
-  render() {
+  function Header() {
+    
     return (
 
       <h1 className="col-12 col-m-4">
