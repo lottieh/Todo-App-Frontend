@@ -3,7 +3,7 @@ import Leftpenguin from './Leftpenguin';
 import Header from './Header';
 import RightPenguin from './RightPenguin';
 
-class Topheader extends React.Component {
+class Headernest extends React.Component {
 
     render() {
         return (
@@ -18,4 +18,4 @@ class Topheader extends React.Component {
         )
     }
 }
-export default Topheader
+export default Headernest
