@@ -1,5 +1,5 @@
 import React from 'react';
-import littlePenguin from './littlePenguin.png';
+import littlePenguin from '../littlePenguin.png';
 class Leftpenguin extends React.Component {
 
     render() {

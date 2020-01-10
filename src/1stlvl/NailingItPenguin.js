@@ -1,5 +1,5 @@
 import React from 'react';
-import nailingitpenguin from './nailingitpenguin.jpg';
+import nailingitpenguin from '../nailingitpenguin.jpg';
 class NailingItPenguin extends React.Component {
     
     render() {
