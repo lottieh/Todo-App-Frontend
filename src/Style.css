@@ -15,6 +15,7 @@ body {
   color: #5cdb95;
   font-family: "Annie Use Your Telescope", cursive;
   font-size: 16pt;
+  white-space: nowrap;
 }
 h1 {
   border-style: dotted;
