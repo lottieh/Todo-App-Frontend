@@ -5,7 +5,7 @@ class TasksSmashedHeader extends React.Component {
     return (
              
         <h2 className="col-12 col-md-4">
-           Tasks Smashed : {this.props.completedTaskcount} 
+           Tasks Smashed : {this.props.completedTaskCount} 
            </h2>
       
           );
