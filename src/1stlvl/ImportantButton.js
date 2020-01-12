@@ -6,7 +6,7 @@ class ImportantButton extends React.Component {
         return (
             <div>
                 <div className="col-6 col-md-1">
-                <button type="button"> &#9733; </button>;
+                <button type="button"> &#9733; </button>
                 
                
                </div>

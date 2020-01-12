@@ -5,7 +5,7 @@ class Tasks extends React.Component {
     render() {
         return (
             <div>
-                <div class="col-6 col-md-8">Task 1 </div>
+                <div class="col-6">Task 1 </div>
                 
                 </div>
                 )

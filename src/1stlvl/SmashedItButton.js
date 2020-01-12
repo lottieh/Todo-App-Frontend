@@ -7,7 +7,7 @@ class SmashedItButton extends React.Component {
             <div>
                 <div className="col-6 col-md-1">
                    
-                    <button type="button"> "Smashed It !"</button>
+                    <button type="button"> Smashed It !</button>
 
 
                 </div>

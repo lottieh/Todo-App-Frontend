@@ -7,9 +7,9 @@ class EditButton extends React.Component {
             <div>
                 <div className="col-6 col-md-1">
                     
-                    <button type="button">&#x270E; </button>;
+                    <button type="button"> &#x270E; </button>
                     
-                    </div>
+                    </div> 
                 </div>
                 )
                 }}
