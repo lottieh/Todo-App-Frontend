@@ -12,6 +12,23 @@ import Datedtasklist from './3rdlvl/Datedtasklist';
 
 class App extends React.Component {
 
+
+  state= { 
+tasks: [
+  {id:1, description: 'Write CV', Date:0, Completed:false},
+  {id:2, description: 'Learn to Code', Date:0, Completed:false},
+  {id:3, description: 'Find a Flat', Date:0, Completed:false},
+  {id:4, description: 'Make a cup of tea', Date:0, Completed:false},
+  {id:5, description: 'Write a letter of resignation', Date:0, Completed:false},
+  {id:6, description: 'Buy Christmas presents', Date:24/12/2019, Completed:true},
+  {id:7, description: 'Buy some cheese', Date:0, Completed:true},
+  {id:8, description: 'Get a new Laptop', Date:0, Completed:true},
+  {id:9, description: 'Read the yellow pages', Date:0, Completed: true}
+
+]
+  }
+
+
   render() {
     return (
       <div className='container'>
