@@ -4,13 +4,18 @@
   max-width: 100%;
 }
 
-.content {
+/* .content {
   border-style: dotted;
   border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
   padding: 10px 10px 10px 10px;
   margin: auto 60px;
+} */
+body {
+  background-color: #272727;
+  color: #5cdb95;
+  font-family: "Annie Use Your Telescope", cursive;
+  font-size: 16pt;
 }
-
 h1 {
   border-style: dotted;
   height: 60px;
@@ -96,13 +101,6 @@ input:hover, button:hover {
   background-color: #bd67c9;
 }
 
-body {
-  background-color: #272727;
-  color: #5cdb95;
-  font-family: "Annie Use Your Telescope", cursive;
-  font-size: 16pt;
+.penguin_image {
+  width: 250px;
 }
-
-/* .NailingItPenguin {
-
-} */

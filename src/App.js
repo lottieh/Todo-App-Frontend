@@ -50,7 +50,6 @@ class App extends React.Component {
             <span class="badge badge-warning d-none d-xl-inline-block">XL</span>
 
           </p>
-          
           <Insertionsection />
 
           <UndatedTasksToDoHeadernest />
@@ -62,11 +61,11 @@ class App extends React.Component {
           <Datedtasklist />
 
           <TasksSmashedHeadernest />
-
-          <Donetasklist />
+<div className ='row Bordered'>
+            <Donetasklist />
 
           <NailingItPenguin />
-
+</div>
         </div>
       </div>
     )
