@@ -80,7 +80,7 @@ h2 {
   font-weight: bold;
 
 }
-input {
+input,button {
   border-style: dotted;
   border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
   border-color: #5cdb95;
