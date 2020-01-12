@@ -7,7 +7,7 @@ class InsertionSectionTask extends React.Component {
             <div>
                 <div className="insert-col-1  col-6 col-m-4">
                     
-                    Task to be done:
+                    Task to be done:   
                 </div>
 
                 </div>

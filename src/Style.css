@@ -16,6 +16,7 @@ body {
   font-family: "Annie Use Your Telescope", cursive;
   font-size: 16pt;
   white-space: nowrap;
+  overflow-x: hidden;
 }
 h1 {
   border-style: dotted;
@@ -80,10 +81,12 @@ h2 {
   border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
   padding: 20px 20px 20px 20px;
 }
-.due-date {
-  /* float: centre; */
+.taskline {
+padding: 10px; 
+}
+.duedate {
   text-decoration: underline; 
-  font-weight: bold;
+
 
 }
 input,button {
@@ -91,7 +94,7 @@ input,button {
   border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
   border-color: #5cdb95;
   background-color: darkcyan;
-  padding: 0px 20px 0px 15px;
+  padding: 0px 15px 0px 15px;
   font-weight: bold;
   font-size: 16px;
   color: #5cdb95;

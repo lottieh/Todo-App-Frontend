@@ -8,7 +8,7 @@ class Taskline extends React.Component {
   render() {
     return (
 
-      <div className = 'row'> 
+      <div className = 'row taskline'> 
       <Tasks />
       <EditButton />
       <ImportantButton />

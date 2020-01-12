@@ -9,15 +9,14 @@ class Datedtaskline extends React.Component {
   render() {
     return (
 
-      <div className = 'row'> 
+      <div className = 'row taskline'> 
       <Date />
       <Tasks />
       <EditButton />
       <ImportantButton />
       <SmashedItButton />
-           
+     
       </div>
-
     );
   }
 }
