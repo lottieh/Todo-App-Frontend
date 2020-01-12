@@ -85,16 +85,14 @@ input,button {
   border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
   border-color: #5cdb95;
   background-color: darkcyan;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 20px 0px 15px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   color: #5cdb95;
   background-color: darkcyan;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-}
+ }
 
-input:hover {
+input:hover, button:hover {
   background-color: #bd67c9;
 }
 

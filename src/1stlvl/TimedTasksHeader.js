@@ -4,11 +4,11 @@ class TimedTasksHeader extends React.Component {
   render() {
     return (
 
-      <h1 className="col-4">
+      <h2 className="col-12 col-md-4">
        
         Timed Tasks to Do: 2
       
-        </h1>
+        </h2>
 
     );
   }
