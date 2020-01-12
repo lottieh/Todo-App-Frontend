@@ -19,16 +19,6 @@ class App extends React.Component {
 
         <div className='content'>
 
-          {/* <p>
-
-
-            <span class="badge badge-warning d-inline-block d-sm-none">XS</span>
-            <span class="badge badge-warning d-none d-sm-inline-block d-md-none">SM</span>
-            <span class="badge badge-warning d-none d-md-inline-block d-lg-none">MD</span>
-            <span class="badge badge-warning d-none d-lg-inline-block d-xl-none">LG</span>
-            <span class="badge badge-warning d-none d-xl-inline-block">XL</span>
-
-          </p> */}
           <Insertionsection />
 
           <UndatedTasksToDoHeadernest />
@@ -40,11 +30,11 @@ class App extends React.Component {
           <Datedtasklist />
 
           <TasksSmashedHeadernest />
-<div className ='row Bordered'>
+          <div className='row Bordered'>
             <Donetasklist />
 
-          <NailingItPenguin />
-</div>
+            <NailingItPenguin />
+          </div>
         </div>
       </div>
     )
