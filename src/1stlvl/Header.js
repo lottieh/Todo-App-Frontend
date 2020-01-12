@@ -3,7 +3,7 @@ import React from 'react';
     
     return (
 
-      <h1 className="col-12 col-m-4">
+      <h1 className="col-m-4">
         Nailing It To Do List !
       </h1>
 

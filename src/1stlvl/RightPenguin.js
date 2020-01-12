@@ -3,10 +3,13 @@ import littlePenguin from '../littlePenguin.png';
 class RightPenguin extends React.Component {
 
   render() {
-    return (<div classname="d-none d-md-4">
+    return (
+      <div className="row d-none d-md-block">
+      <div className="col-4">
              
         <img className="topr" src={littlePenguin} alt="penguin"></img>
          
+         </div>
          </div>
           );
         }

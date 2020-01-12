@@ -5,7 +5,11 @@ class EditButton extends React.Component {
     render() {
         return (
             <div>
-                <div className="col-6 col-md-1"><input type="submit" value= "&#x270E;"/></div>
+                <div className="col-6 col-md-1">
+                    
+                    <button type="button">&#x270E; </button>;
+                    
+                    </div>
                 </div>
                 )
                 }}

@@ -51,12 +51,12 @@ class App extends React.Component {
 
           <TasksSmashedHeadernest />
 
-         <Donetasklist />
+          <Donetasklist />
 
-            <NailingItPenguin />
+          <NailingItPenguin />
 
-          </div>
         </div>
+      </div>
     )
   }
 }

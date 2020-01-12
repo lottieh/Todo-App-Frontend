@@ -5,7 +5,11 @@ class ImportantButton extends React.Component {
     render() {
         return (
             <div>
-                <div className="col-6 col-md-1"><input type="submit" value= "&#9733;"/></div>
+                <div className="col-6 col-md-1">
+                <button type="button"> &#9733; </button>;
+                
+               
+               </div>
                 </div>
                 )
                 }}

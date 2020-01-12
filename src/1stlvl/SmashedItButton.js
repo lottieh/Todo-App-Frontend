@@ -1,12 +1,18 @@
 import React from 'react';
 
 class SmashedItButton extends React.Component {
-    
+
     render() {
         return (
             <div>
-                <div className="col-6 col-md-1"><input type="submit" value= "Smashed It !"/></div>
+                <div className="col-6 col-md-1">
+                   
+                    <button type="button"> "Smashed It !"</button>
+
+
                 </div>
-                )
-                }}
-    export default SmashedItButton
+            </div>
+        )
+    }
+}
+export default SmashedItButton
