@@ -10,7 +10,7 @@ class UndatedTasksToDoHeadernest extends React.Component {
 
       <div className ='row'>
         <Leftpenguin />
-        <UndatedTasksToDoHeader />
+        <UndatedTasksToDoHeader taskCount={this.state.tasks.length}  />
         <RightPenguin />
 
       </div>

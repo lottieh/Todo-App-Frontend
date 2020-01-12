@@ -5,7 +5,7 @@ class UndatedTasksToDoHeader extends React.Component {
     return (
 
       <h2 className="col-12 col-md-4">
-        Tasks to do: 3
+        Tasks to do:{this.props.taskCount}
       </h2>
 
     );

@@ -6,7 +6,7 @@ class TimedTasksHeader extends React.Component {
 
       <h2 className="col-12 col-md-4">
        
-        Timed Tasks to Do: 2
+        Timed Tasks to Do: {this.props.datedTaskcount}
       
         </h2>
 

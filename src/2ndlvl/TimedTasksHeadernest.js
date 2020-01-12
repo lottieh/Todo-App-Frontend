@@ -9,7 +9,7 @@ class TimedTasksHeadernest extends React.Component {
 
       <div className='row'>
         <Leftpenguin />
-        <TimedTasksHeader />
+        <TimedTasksHeader  />
         <RightPenguin />
       </div>
     );

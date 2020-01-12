@@ -9,7 +9,7 @@ class TasksSmashedHeadernest extends React.Component {
 
       <div className='row'>
         <Leftpenguin />
-        <TasksSmashedHeader />
+        <TasksSmashedHeader  />
         <RightPenguin />
       </div>
 
