@@ -8,12 +8,37 @@ class Taskline extends React.Component {
   render() {
     return (
 
-      <div className = 'row taskline'> 
-      <Tasks />
-      <EditButton />
-      <ImportantButton />
-      <SmashedItButton />
-           
+      <div className='row taskline'>
+
+        {/*Task*/}
+
+        <div className="col-6">{this.props.taskDescription}</div>
+
+
+        {/*Edit*/}
+        <div className="col-6 col-md-2">
+
+          <button type="button"> &#x270E; </button>
+
+        </div>
+
+        {/*Important*/}
+
+        <div className="col-6 col-md-2">
+          <button type="button"> &#9733; </button>
+
+
+        </div>
+
+        {/*Smashed It*/}
+        <div className="col-6 col-md-2">
+
+          <button type="button"> Smashed It !</button>
+
+
+        </div>
+
+
       </div>
 
     );

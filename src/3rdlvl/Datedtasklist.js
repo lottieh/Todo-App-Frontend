@@ -7,10 +7,19 @@ class Datedtasklist extends React.Component {
         return (
             <div className="Bordered">
             <DateDue />
-
-            <Datedtaskline />
-            <Datedtaskline />
+            {this.props.datedJobsToDo.map( function(item) {
+                    return <Datedtaskline taskDescription={item.description} />;
+                })}
+        
             </div>
+        
+        <div>
+            
+        {this.props.dateDue.map( function(item) {
+            return <Datedtaskline taskDate={item.Date}/>;
+        })}
+        </div>
+
         )
     }
 }

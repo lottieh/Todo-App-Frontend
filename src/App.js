@@ -29,7 +29,7 @@ class App extends React.Component {
 
     datedTasks: [
       {id:4, description: 'Make a cup of tea', Date:0, Completed:false},
-      {id:5, description: 'Write a letter of resignation', Date:0, Completed:false}
+      {id:5, description: 'Write a letter of resignation', Date:03/03/2020, Completed:false}
     ],
 
     completedTasks: [
@@ -56,7 +56,7 @@ class App extends React.Component {
             <RightPenguin />
           </div>
 
-          <Tasklist />
+          <Tasklist jobsToDo={this.state.tasks} />
 
           <div className='row'>
             <Leftpenguin />
@@ -64,7 +64,7 @@ class App extends React.Component {
             <RightPenguin />
           </div>
 
-          <Datedtasklist />
+          <Datedtasklist datedJobsToDo={this.state.datedTasks} dateDue ={this.state.datedTasks}/>
 
 
           <div className='row'>
