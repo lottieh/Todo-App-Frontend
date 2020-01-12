@@ -40,7 +40,7 @@ class App extends React.Component {
 
         <div className='content'>
 
-          <p>
+          {/* <p>
 
 
             <span class="badge badge-warning d-inline-block d-sm-none">XS</span>
@@ -49,7 +49,7 @@ class App extends React.Component {
             <span class="badge badge-warning d-none d-lg-inline-block d-xl-none">LG</span>
             <span class="badge badge-warning d-none d-xl-inline-block">XL</span>
 
-          </p>
+          </p> */}
           <Insertionsection />
 
           <UndatedTasksToDoHeadernest />
