@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Nailing It To Do List !
+    </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!--Header-->
+        <div class="row">
+            <img class="topl" src="https://cdn.pixabay.com/photo/2016/03/31/17/51/animal-1293952_1280.png"
+                alt="penguin">
+            <h1> Nailing It To Do List !</h1>
+            <img class="topr" src="https://cdn.pixabay.com/photo/2016/03/31/17/51/animal-1293952_1280.png"
+                alt="penguin">
+        </div>
+        <!--Insert task section-->
+        <div id="Insertion_Section">
+
+            <div class="row">
+                <div class="insert-col-1 col-6 col-md-2">Task to be done:
+                </div>
+
+                <div class="insert-col-3 col-6 col-md-4">
+                    <form action="/action_page.php">
+                        <input type="text" name="task" placeholder="Task to be done!" />
+                    </form>
+                    <small id="taskHelp" class="form-text text-muted">
+                        Please enter the task that you need to do.
+                    </small>
+                </div>
+
+                <div class="insert-col-2 col-6 col-md-3">
+                    Completion Date (Can be left blank):
+                </div>
+
+                <div class="insert-col-4 col-6 col-md-2">
+                    <form action="/action_page.php">
+                        <input type="date" name="completionDate">
+                    </form>
+                    <small id="dateHelp" class="form-text text-muted">
+                        Please enter date of completion if necessary.
+                    </small>
+                </div>
+
+                <div class="col-12 col-md-1">
+                    <input type="submit" value="Add">
+                </div>
+            </div>
+            
+            <!--Undated Tasks Section-->
+
+
+
+            <div class="Undated_tasks_to_do col-12">
+                <div class="row">
+                    <img class="topl" src="https://cdn.pixabay.com/photo/2016/03/31/17/51/animal-1293952_1280.png"
+                        alt="penguin">
+                    <h2> Tasks to do : 3 </h2>
+                    <img class="topr" src="https://cdn.pixabay.com/photo/2016/03/31/17/51/animal-1293952_1280.png"
+                        alt="penguin">
+                    <div class="table">
+                        <!-- Task -->
+                        <div class="row">
+                            <div class="col-6 col-md-8">Task 1 </div>
+                            <div class="col-6 col-md-1"><input type="submit" value=&#x270E;> </div>
+                            <div class="col-6 col-md-1"> <input type="submit" value=&#9733;></div>
+                            <div class="col-6 col-md-2"><input type="submit" value="Smashed It"></div>
+
+                        </div>
+
+                        <!-- Task -->
+
+                        <div class="row">
+                            <div class="col-6 col-md-8">Task 2 </div>
+                            <div class="col-6 col-md-1"><input type="submit" value=&#x270E;> </div>
+                            <div class="col-6 col-md-1"> <input type="submit" value=&#9733;></div>
+                            <div class="col-6 col-md-2"><input type="submit" value="Smashed It"></div>
+                        </div>
+
+                        <!-- Task -->
+
+                        <div class="row">
+                            <div class="col-6 col-md-8">Task 3 </div>
+                            <div class="col-6 col-md-1"><input type="submit" value=&#x270E;> </div>
+                            <div class="col-6 col-md-1"> <input type="submit" value=&#9733;></div>
+                            <div class="col-6 col-md-2"><input type="submit" value="Smashed It"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timed Task Section-->
+
+            <div id="Timed_Tasks_to_do">
+                <div class="row">
+                    <img class="topl" src="https://cdn.pixabay.com/photo/2016/03/31/17/51/animal-1293952_1280.png"
+                        alt="penguin">
+                    <h2> Timed Tasks to do : 2 </h2>
+                    <img class="topr" src="https://cdn.pixabay.com/photo/2016/03/31/17/51/animal-1293952_1280.png"
+                        alt="penguin">
+                </div>
+
+
+                <div class="table2">
+                    <div class="row">
+                        <div class="col-2" id=due-date>
+                            Due Date
+                        </div>
+                    </div>
+                    <!-- Timed Task -->
+                    <div class="row timed_table_line">
+                        <div class="col-3 col-md-2"> 03/12/2019</div>
+                        <div class="col-9 col-md-6"> Task 4 </div>
+                        <div class="col-6 col-md-1"><input type="submit" value=&#x270E;> </div>
+                        <div class="col-6 col-md-1"> <input type="submit" value=&#9733;></div>
+                        <div class="col-6 col-md-2"><input type="submit" value="Smashed It"></div>
+                    </div>
+                    <!-- Timed Task -->
+                    <div class="row timed_table_line">
+                        <div class="col-4 col-md-2"> 12/12/2019</div>
+                        <div class="col-4 col-md-6"> Task 5</div>
+                        <div class="col-6 col-md-1"><input type="submit" value=&#x270E;> </div>
+                        <div class="col-6 col-md-1"> <input type="submit" value=&#9733;></div>
+                        <div class="col-6 col-md-2"><input type="submit" value="Smashed It"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed Section-->
+            <div class="completed row">
+                <img class="topl" src="https://cdn.pixabay.com/photo/2016/03/31/17/51/animal-1293952_1280.png"
+                    alt="penguin">
+                <h2 class="4"> Tasks Smashed: 5 </h2>
+                <img class="topr" src="https://cdn.pixabay.com/photo/2016/03/31/17/51/animal-1293952_1280.png"
+                    alt="penguin">
+
+                <div class="row table">
+                    <div class="col-12  col-md-6">
+                        <ul>
+                            <li> Done Task 1</li>
+                            <li> Done Task 2</li>
+                            <li> Done Task 3</li>
+                            <li> Done Task 4</li>
+                            <li> Done Task 5</li>
+                        </ul>
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6" id="penguin_image"> <img src="docs/Nailing it penguin.jpg" width="250"
+                            alt="You're Nailing it penguin">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
