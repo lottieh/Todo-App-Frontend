@@ -29,7 +29,7 @@ class App extends React.Component {
 
     datedTasks: [
       {id:4, description: 'Make a cup of tea', Date:0, Completed:false},
-      {id:5, description: 'Write a letter of resignation', Date:03/03/2020, Completed:false}
+      {id:5, description: 'Write a letter of resignation', Date:2, Completed:false}
     ],
 
     completedTasks: [

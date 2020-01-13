@@ -13,18 +13,18 @@ class Datedtaskline extends React.Component {
         <div className='row taskline'>
 
           {/*Date*/}
-          
-          <div className="col-6 col-md-2"> 
-           {this.props.taskDate}
-                            </div>
+
+          <div className="col-6 col-md-12">
+            03/01/2019
+          </div>
 
           {/*Task*/}
 
-          <div className="col-6">{this.props.taskDescription}</div>
+          <div className="col-4">{this.props.taskDescription}</div>
 
 
           {/*Edit*/}
-          <div className="col-6 col-md-1">
+          <div className="col-6 col-md-2">
 
             <button type="button"> &#x270E; </button>
 
@@ -32,11 +32,20 @@ class Datedtaskline extends React.Component {
 
           {/*Important*/}
 
-          <div className="col-6 col-md-1">
+          <div className="col-6 col-md-2">
             <button type="button"> &#9733; </button>
 
 
           </div>
+
+          {/*Delete*/}
+
+          <div className="col-6 col-md-2">
+            <button type="button"> &#10060; </button>
+
+
+          </div>
+
 
           {/*Smashed It*/}
           <div className="col-6 col-md-2">

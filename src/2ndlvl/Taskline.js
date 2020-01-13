@@ -12,7 +12,7 @@ class Taskline extends React.Component {
 
         {/*Task*/}
 
-        <div className="col-6">{this.props.taskDescription}</div>
+        <div className="col-4">{this.props.taskDescription}</div>
 
 
         {/*Edit*/}
@@ -28,7 +28,13 @@ class Taskline extends React.Component {
           <button type="button"> &#9733; </button>
 
 
-        </div>
+        </div> {/*Delete*/}
+
+<div className="col-6 col-md-2">
+  <button type="button"> &#10060; </button>
+
+
+</div>
 
         {/*Smashed It*/}
         <div className="col-6 col-md-2">

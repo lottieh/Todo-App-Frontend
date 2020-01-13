@@ -13,13 +13,8 @@ class Datedtasklist extends React.Component {
         
             </div>
         
-        <div>
-            
-        {this.props.dateDue.map( function(item) {
-            return <Datedtaskline taskDate={item.Date}/>;
-        })}
-        </div>
-
+        
+        
         )
     }
 }
