@@ -6,6 +6,20 @@ import SmashedItButton from '../1stlvl/SmashedItButton';
 import Date from '../1stlvl/Date';
 class Datedtaskline extends React.Component {
 
+
+  deleteClicked=()=>{
+    alert ("You've deleted ?");
+  }
+  editClicked=()=>{
+    alert ("Want to edit ?");
+  }
+  starClicked=()=>{
+    alert ("Is this important ?");
+  }
+  doneClicked=()=>{
+    alert ("Done already? Good Job!");
+  }
+
   render() {
     return (
 
@@ -26,14 +40,14 @@ class Datedtaskline extends React.Component {
           {/*Edit*/}
           <div className="col-6 col-md-2">
 
-            <button type="button"> &#x270E; </button>
+            <button type="button" onClick={this.editClicked}> &#x270E; </button>
 
           </div>
 
           {/*Important*/}
 
           <div className="col-6 col-md-2">
-            <button type="button"> &#9733; </button>
+            <button type="button" onClick={this.starClicked}> &#9733; </button>
 
 
           </div>
@@ -41,7 +55,7 @@ class Datedtaskline extends React.Component {
           {/*Delete*/}
 
           <div className="col-6 col-md-2">
-            <button type="button"> &#10060; </button>
+            <button type="button" onClick={this.deleteClicked}> &#10060; </button>
 
 
           </div>
@@ -50,7 +64,7 @@ class Datedtaskline extends React.Component {
           {/*Smashed It*/}
           <div className="col-6 col-md-2">
 
-            <button type="button"> Smashed It !</button>
+            <button type="button" onClick={this.doneClicked}> Smashed It !</button>
 
 
           </div>

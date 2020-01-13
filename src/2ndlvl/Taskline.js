@@ -5,6 +5,19 @@ import EditButton from '../1stlvl/EditButton';
 import SmashedItButton from '../1stlvl/SmashedItButton';
 class Taskline extends React.Component {
 
+  deleteClicked=()=>{
+    alert ("You've deleted ?");
+  }
+  editClicked=()=>{
+    alert ("Want to edit ?");
+  }
+  starClicked=()=>{
+    alert ("Is this important ?");
+  }
+  doneClicked=()=>{
+    alert ("Done already? Good Job!");
+  }
+
   render() {
     return (
 
@@ -12,41 +25,44 @@ class Taskline extends React.Component {
 
         {/*Task*/}
 
-        <div className="col-4">{this.props.taskDescription}</div>
+        <div className="col-4">
+          
+          {this.props.taskDescription}
+        
+        </div>
 
 
         {/*Edit*/}
         <div className="col-6 col-md-2">
 
-          <button type="button"> &#x270E; </button>
+          <button type="button" onClick={this.editClicked}> &#x270E; </button>
 
         </div>
 
         {/*Important*/}
 
         <div className="col-6 col-md-2">
-          <button type="button"> &#9733; </button>
+          
+          <button type="button" onClick={this.starClicked}> &#9733; </button>
 
+        </div>
 
-        </div> {/*Delete*/}
+        {/*Delete*/}
 
-<div className="col-6 col-md-2">
-  <button type="button"> &#10060; </button>
+        <div className="col-6 col-md-2">
+        
+          <button type="button" onClick={this.deleteClicked}> &#10060; </button>
 
-
-</div>
+        </div>
 
         {/*Smashed It*/}
         <div className="col-6 col-md-2">
 
-          <button type="button"> Smashed It !</button>
-
+          <button type="button" onClick={this.doneClicked}> Smashed It !</button>
 
         </div>
 
-
       </div>
-
     );
   }
 }
