@@ -1,9 +1,5 @@
 import React from 'react';
-import Tasks from '../1stlvl/Tasks';
-import ImportantButton from '../1stlvl/ImportantButton';
-import EditButton from '../1stlvl/EditButton';
-import SmashedItButton from '../1stlvl/SmashedItButton';
-import Date from '../1stlvl/Date';
+
 class Datedtaskline extends React.Component {
 
 
@@ -55,6 +51,7 @@ class Datedtaskline extends React.Component {
           {/*Delete*/}
 
           <div className="col-6 col-md-2">
+            
             <button type="button" onClick={this.deleteClicked}> &#10060; </button>
 
 
