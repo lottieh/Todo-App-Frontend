@@ -3,17 +3,17 @@ import React from 'react';
 class Datedtaskline extends React.Component {
 
 
-  deleteClicked=()=>{
-    alert ("You've deleted ?");
+  deleteClicked = () => {
+    this.props.deleteTaskFunc(this.props.item.id);
   }
-  editClicked=()=>{
-    alert ("Want to edit ?");
+  editClicked = () => {
+    alert("Want to edit ?");
   }
-  starClicked=()=>{
-    alert ("Is this important ?");
+  starClicked = () => {
+    alert("Is this important ?");
   }
-  doneClicked=()=>{
-    alert ("Done already? Good Job!");
+  doneClicked = () => {
+    alert("Done already? Good Job!");
   }
 
   render() {
@@ -30,7 +30,11 @@ class Datedtaskline extends React.Component {
 
           {/*Task*/}
 
-          <div className="col-4">{this.props.taskDescription}</div>
+          <div className="col-4">
+
+            {this.props.item.description}
+
+          </div>
 
 
           {/*Edit*/}
@@ -51,7 +55,7 @@ class Datedtaskline extends React.Component {
           {/*Delete*/}
 
           <div className="col-6 col-md-2">
-            
+
             <button type="button" onClick={this.deleteClicked}> &#10060; </button>
 
 
