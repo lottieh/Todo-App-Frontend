@@ -55,6 +55,19 @@ class App extends React.Component {
   
   }
 
+  addTask = (taskDescription) => {
+    const taskToAdd ={
+      id:24,
+      description: taskDescription,
+      Completed:false
+    };
+    const currentTasks = this.state.tasks;
+    currentTasks.push(taskToAdd); 
+    this.setState({
+      tasks:currentTasks
+    });
+  }
+
 
   render() {
     return ( 
@@ -63,7 +76,7 @@ class App extends React.Component {
 
         <div className='content'>
 
-          <Insertionsection />
+          <Insertionsection addTaskFunc={this.addTask} />
 
           <div className='row'>
             <Leftpenguin />
