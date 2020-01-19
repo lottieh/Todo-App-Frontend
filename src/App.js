@@ -50,11 +50,10 @@ class App extends React.Component {
   this.setState ({datedTasks:updatedDatedTasks});
   }
 
-  // compTask = (taskId)=> {
-  //   alert (`Done task ${taskId} already? Good Job!`);
-  //     const updatedCompleteTasks = this.state.completedTasks.map(item => item.id === taskId);
-  // this.setState ({completedTasks:updatedCompleteTasks});
-  // }
+  compTask = (taskId)=> {
+    alert (`Done task ${taskId} already? Good Job!`);
+  
+  }
 
 
   render() {
@@ -91,7 +90,7 @@ class App extends React.Component {
 
 
           <div className='row Bordered'>
-            <Donetasklist jobDone={this.state.completedTasks}/>
+            <Donetasklist tasksDone={this.state.completedTasks}/>
 
             <NailingItPenguin />
           </div>
