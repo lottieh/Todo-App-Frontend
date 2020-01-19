@@ -20,8 +20,7 @@ class Datedtaskline extends React.Component {
     return (
 
       <div className='row taskline'>
-        <div className='row taskline'>
-
+        
           {/*Date*/}
 
           <div className="col-6 col-md-12">
@@ -73,7 +72,7 @@ class Datedtaskline extends React.Component {
 
         </div>
 
-      </div>
+     
     );
   }
 }
