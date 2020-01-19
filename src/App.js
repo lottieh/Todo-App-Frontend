@@ -38,6 +38,11 @@ class App extends React.Component {
     ]  
   }
 
+  deleteTask = (taskId)=> {
+    alert (`You have deleted ${taskId}`);
+      const updatedTasks = this.state.tasks.filter(item => item.id !== taskId);
+  this.setState ({tasks :updatedTasks});
+  }
 
   render() {
     return (
@@ -54,15 +59,15 @@ class App extends React.Component {
             <RightPenguin />
           </div>
 
-          <Tasklist jobsToDo={this.state.tasks} />
+          <Tasklist jobsToDo={this.state.tasks} deleteTaskFunc={this.deleteTask} />
 
-          <div className='row'>
+          <div className='row'> 
             <Leftpenguin />
             <TimedTasksHeader datedTaskCount={this.state.datedTasks.length} />
             <RightPenguin />
           </div>
 
-          <Datedtasklist datedJobsToDo={this.state.datedTasks} dateDue ={this.state.datedTasks}/>
+          <Datedtasklist datedJobsToDo={this.state.datedTasks} dateDue ={this.state.datedTasks} />
 
 
           <div className='row'>
