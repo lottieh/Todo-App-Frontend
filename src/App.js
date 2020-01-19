@@ -50,8 +50,15 @@ class App extends React.Component {
   this.setState ({datedTasks:updatedDatedTasks});
   }
 
+  // compTask = (taskId)=> {
+  //   alert (`Done task ${taskId} already? Good Job!`);
+  //     const updatedCompleteTasks = this.state.completedTasks.map(item => item.id === taskId);
+  // this.setState ({completedTasks:updatedCompleteTasks});
+  // }
+
+
   render() {
-    return (
+    return ( 
       <div className='container'>
         <Headernest />
 
@@ -65,7 +72,7 @@ class App extends React.Component {
             <RightPenguin />
           </div>
 
-          <Tasklist jobsToDo={this.state.tasks} deleteTaskFunc={this.deleteTask} />
+          <Tasklist jobsToDo={this.state.tasks} deleteTaskFunc={this.deleteTask} compTaskFunc= {this.compTask}/>
 
           <div className='row'> 
             <Leftpenguin />
@@ -84,7 +91,7 @@ class App extends React.Component {
 
 
           <div className='row Bordered'>
-            <Donetasklist />
+            <Donetasklist jobDone={this.state.completedTasks}/>
 
             <NailingItPenguin />
           </div>

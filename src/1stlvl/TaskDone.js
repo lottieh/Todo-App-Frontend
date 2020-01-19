@@ -1,15 +1,17 @@
 import React from 'react';
 
 class TaskDone extends React.Component {
-    
+
     render() {
         return (
-            <div>
-                <div className="col-12  col-md-6">
-                    <li> Task Done </li>
+
+            <div className="col-12  col-md-6">
                 
-                </div>
-                </div>
-                )
-                }}
-    export default TaskDone
+                {this.props.done.description }
+
+            </div>
+
+        )
+    }
+}
+export default TaskDone
