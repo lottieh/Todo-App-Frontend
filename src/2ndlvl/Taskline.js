@@ -1,11 +1,9 @@
 import React from 'react';
 
-
 class Taskline extends React.Component {
 
   deleteClicked=()=>{
-    this.props.deleteTaskFunc(this.props.item.id);
-    
+    alert ("You've deleted ?");
   }
   editClicked=()=>{
     alert ("Want to edit ?");

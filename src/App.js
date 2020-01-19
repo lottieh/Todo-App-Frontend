@@ -25,22 +25,18 @@ class App extends React.Component {
     ],
 
     datedTasks: [
-      { id: 4, description: 'Make a cup of tea', Date: 0, Completed: false },
-      { id: 5, description: 'Write a letter of resignation', Date: 2, Completed: false }
+      {id:4, description: 'Make a cup of tea', Date:0, Completed:false},
+      {id:5, description: 'Write a letter of resignation', Date:2, Completed:false}
     ],
 
     completedTasks: [
-      { id: 6, description: 'Buy Christmas presents', Date: 24 / 12 / 2019, Completed: true },
-      { id: 7, description: 'Buy some cheese', Date: 0, Completed: true },
-      { id: 8, description: 'Get a new Laptop', Date: 0, Completed: true },
-      { id: 9, description: 'Read the yellow pages', Date: 0, Completed: true }
-    ]
+      {id:6, description: 'Buy Christmas presents', Date:24/12/2019, Completed:true},
+      {id:7, description: 'Buy some cheese', Date:0, Completed:true},
+      {id:8, description: 'Get a new Laptop', Date:0, Completed:true},
+      {id:9, description: 'Read the yellow pages', Date:0, Completed: true}
+    ]  
   }
 
-  deleteTask = (taskId) => {
-    alert(`You have deleted  ${this.props.item.description}`);
-   
-  }
 
   render() {
     return (
@@ -57,7 +53,7 @@ class App extends React.Component {
             <RightPenguin />
           </div>
 
-          <Tasklist jobsToDo={this.state.tasks} deleteTaskFunc={this.deleteTask} />
+          <Tasklist jobsToDo={this.state.tasks} />
 
           <div className='row'>
             <Leftpenguin />
@@ -65,7 +61,7 @@ class App extends React.Component {
             <RightPenguin />
           </div>
 
-          <Datedtasklist datedJobsToDo={this.state.datedTasks} dateDue={this.state.datedTasks} />
+          <Datedtasklist datedJobsToDo={this.state.datedTasks} dateDue ={this.state.datedTasks}/>
 
 
           <div className='row'>
