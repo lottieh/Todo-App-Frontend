@@ -6,11 +6,18 @@ class Tasklist extends React.Component {
     render() {
         return (
             <div className='Bordered'>
-                {this.props.jobsToDo.map( function(item) {
+
+                {/* {this.props.jobsToDo.map( function(item) {
                     return <Taskline taskDescription={item.description} />;
-                })}
-                    
-                </div>
+                })} */}
+
+                {
+                    this.props.jobsToDo.map(
+                        (taskItem) =><Taskline item={taskItem} />
+                    )
+                }
+
+            </div>
         )
     }
 }

@@ -24,7 +24,7 @@ class Taskline extends React.Component {
 
         <div className="col-4">
           
-          {this.props.taskDescription}
+      {this.props.item.description}
         
         </div>
 

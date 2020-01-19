@@ -21,6 +21,7 @@ class App extends React.Component {
       { id: 1, description: 'Write CV', Date: 0, Completed: false },
       { id: 2, description: 'Learn to Code', Date: 0, Completed: false },
       { id: 3, description: 'Find a Flat', Date: 0, Completed: false },
+      { id:11, description: 'Test it', Completed: true},
 
     ],
 
