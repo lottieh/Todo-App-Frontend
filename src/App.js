@@ -65,12 +65,22 @@ class App extends React.Component {
     currentTasks.push(taskToAdd); 
     this.setState({
       tasks:currentTasks
-    });
+    })};
   
-    
+    addDatedTask = (taskDescription,Date) => {
+      const datedTaskToAdd ={
+        id:uuidv4(),
+        description: taskDescription,
+        Date : Date, 
+        Completed:false
+      };
+      const currentDatedTasks = this.state.datedTasks;
+      currentDatedTasks.push(datedTaskToAdd); 
+      this.setState({
+        datedTasks:currentDatedTasks
+      });
   
   }
-
 
   render() {
     return ( 
