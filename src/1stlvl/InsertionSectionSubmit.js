@@ -5,7 +5,7 @@ class InsertionSectionSubmit extends React.Component {
 
     addTask =()=> {
         alert ('Oooh we are adding something !!!');
-        this.props.addTaskFunc("Break all the things")
+        this.props.addTaskFunc(this.state.taskDescription)
     }
 
     render() {

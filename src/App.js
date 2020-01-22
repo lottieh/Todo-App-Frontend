@@ -18,23 +18,23 @@ class App extends React.Component {
 
   state = {
     tasks: [
-      { id: 1, description: 'Write CV', Date: 0, Completed: false },
-      { id: 2, description: 'Learn to Code', Date: 0, Completed: false },
-      { id: 3, description: 'Find a Flat', Date: 0, Completed: false },
-      { id:11, description: 'Test it', Completed: true},
+      { id: uuidv4(), description: 'Write CV', Date: 0, Completed: false },
+      { id: uuidv4(), description: 'Learn to Code', Date: 0, Completed: false },
+      { id: uuidv4(), description: 'Find a Flat', Date: 0, Completed: false },
+      { id:uuidv4(), description: 'Test it', Completed: true},
 
     ],
 
     datedTasks: [
-      {id:4, description: 'Make a cup of tea', Date:0, Completed:false},
-      {id:5, description: 'Write a letter of resignation', Date:2, Completed:false}
+      {id:uuidv4(), description: 'Make a cup of tea', Date:0, Completed:false},
+      {id:uuidv4(), description: 'Write a letter of resignation', Date:2, Completed:false}
     ],
 
     completedTasks: [
-      {id:6, description: 'Buy Christmas presents', Date:24/12/2019, Completed:true},
-      {id:7, description: 'Buy some cheese', Date:0, Completed:true},
-      {id:8, description: 'Get a new Laptop', Date:0, Completed:true},
-      {id:9, description: 'Read the yellow pages', Date:0, Completed: true}
+      {id:uuidv4(), description: 'Buy Christmas presents', Date:24/12/2019, Completed:true},
+      {id:uuidv4(), description: 'Buy some cheese', Date:0, Completed:true},
+      {id:uuidv4(), description: 'Get a new Laptop', Date:0, Completed:true},
+      {id:uuidv4(), description: 'Read the yellow pages', Date:0, Completed: true}
     ]  
   }
 
@@ -57,7 +57,7 @@ class App extends React.Component {
 
   addTask = (taskDescription) => {
     const taskToAdd ={
-      id:24,
+      id:uuidv4(),
       description: taskDescription,
       Completed:false
     };
@@ -66,6 +66,9 @@ class App extends React.Component {
     this.setState({
       tasks:currentTasks
     });
+  
+    
+  
   }
 
 
@@ -84,7 +87,7 @@ class App extends React.Component {
             <RightPenguin />
           </div>
 
-          <Tasklist jobsToDo={this.state.tasks} deleteTaskFunc={this.deleteTask} compTaskFunc= {this.compTask}/>
+          <Tasklist jobsToDo={this.state.tasks} deleteTaskFunc={this.deleteTask} />
 
           <div className='row'> 
             <Leftpenguin />
