@@ -9,6 +9,10 @@ class Insertionsection extends React.Component {
         alert('Oooh we are adding something !!!');
         this.props.addTaskFunc(this.state.taskDescription)
     }
+    addDatedTask = () => {
+        alert('Oooh we are adding a dated something !!!');
+        this.props.addDatedTaskFunc(this.state.taskDescription)
+    }
 
     state = {
         taskDescription: " "
@@ -46,8 +50,13 @@ class Insertionsection extends React.Component {
 
 
         <div className="col-12 col-md-1">
-            <input type="submit" value="Add" onClick={this.addTask} />
-        </div>
+            <input type="submit" value="Add" 
+            //if the date is entered 
+            onClick={this.addTask} 
+            // if date not entered else onClick={this.addDatedTask} />
+        
+        />
+            </div>
         </div >
             )
     }

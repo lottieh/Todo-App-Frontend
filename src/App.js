@@ -35,7 +35,9 @@ class App extends React.Component {
       {id:uuidv4(), description: 'Buy some cheese', Date:0, Completed:true},
       {id:uuidv4(), description: 'Get a new Laptop', Date:0, Completed:true},
       {id:uuidv4(), description: 'Read the yellow pages', Date:0, Completed: true}
-    ]  
+    ]  , 
+  
+  darkMode: true
   }
 
   deleteTask = (taskId)=> {
@@ -80,16 +82,19 @@ class App extends React.Component {
         datedTasks:currentDatedTasks
       });
   
-  }
+  };
 
   render() {
     return ( 
       <div className='container'>
         <Headernest />
-
+                <button 
+                  onClick={this.darkModeHandler}>
+                    Mode 
+                   </button>
         <div className='content'>
 
-          <Insertionsection addTaskFunc={this.addTask} />
+          <Insertionsection addTaskFunc={this.addTask} addDatedTaskFunc={this.addDatedTask} />
 
           <div className='row'>
             <Leftpenguin />
