@@ -21,113 +21,135 @@ class App extends React.Component {
       { id: uuidv4(), description: 'Write CV', Date: 0, Completed: false },
       { id: uuidv4(), description: 'Learn to Code', Date: 0, Completed: false },
       { id: uuidv4(), description: 'Find a Flat', Date: 0, Completed: false },
-      { id:uuidv4(), description: 'Test it', Completed: true},
+      { id: uuidv4(), description: 'Test it', Completed: true },
 
     ],
 
     datedTasks: [
-      {id:uuidv4(), description: 'Make a cup of tea', Date:0, Completed:false},
-      {id:uuidv4(), description: 'Write a letter of resignation', Date:2, Completed:false}
+      { id: uuidv4(), description: 'Make a cup of tea', Date: 0, Completed: false },
+      { id: uuidv4(), description: 'Write a letter of resignation', Date: 2, Completed: false }
     ],
 
     completedTasks: [
-      {id:uuidv4(), description: 'Buy Christmas presents', Date:24/12/2019, Completed:true},
-      {id:uuidv4(), description: 'Buy some cheese', Date:0, Completed:true},
-      {id:uuidv4(), description: 'Get a new Laptop', Date:0, Completed:true},
-      {id:uuidv4(), description: 'Read the yellow pages', Date:0, Completed: true}
-    ]  , 
-  
-  darkMode: true
+      { id: uuidv4(), description: 'Buy Christmas presents', Date: 24 / 12 / 2019, Completed: true },
+      { id: uuidv4(), description: 'Buy some cheese', Date: 0, Completed: true },
+      { id: uuidv4(), description: 'Get a new Laptop', Date: 0, Completed: true },
+      { id: uuidv4(), description: 'Read the yellow pages', Date: 0, Completed: true }
+    ],
+
+    darkMode: true
   }
 
-  deleteTask = (taskId)=> {
-    alert (`You have deleted ${taskId}`);
-      const updatedTasks = this.state.tasks.filter(item => item.id !== taskId);
-  this.setState ({tasks :updatedTasks});
+  deleteTask = (taskId) => {
+    alert(`You have deleted ${taskId}`);
+    const updatedTasks = this.state.tasks.filter(item => item.id !== taskId);
+    this.setState({ tasks: updatedTasks });
   }
 
-  deleteDatedTask = (taskId)=> {
-    alert (`You have deleted ${taskId}`);
-      const updatedDatedTasks = this.state.datedTasks.filter(item => item.id !== taskId);
-  this.setState ({datedTasks:updatedDatedTasks});
+  deleteDatedTask = (taskId) => {
+    alert(`You have deleted ${taskId}`);
+    const updatedDatedTasks = this.state.datedTasks.filter(item => item.id !== taskId);
+    this.setState({ datedTasks: updatedDatedTasks });
   }
 
-  compTask = (taskId)=> {
-    alert (`Done task ${taskId} already? Good Job!`);
-  
-  }
+  compTask = (taskId) => {
+    alert(`Done task ${taskId} already? Good Job!`);
 
-  addTask = (taskDescription) => {
-    const taskToAdd ={
-      id:uuidv4(),
-      description: taskDescription,
-      Completed:false
-    };
-    const currentTasks = this.state.tasks;
-    currentTasks.push(taskToAdd); 
+    //Find task that needs updating
+    const comTask = this.state.tasks;
+    for (let i = 0; i < comTask.length; i++) {
+      const task = comTask[i];
+
+      if (task.id === taskId) {
+        task.completed = true;
+        break;
+      }}
+
     this.setState({
-      tasks:currentTasks
+      tasks: comTask
     })};
-  
-    addDatedTask = (taskDescription,Date) => {
-      const datedTaskToAdd ={
-        id:uuidv4(),
+
+    addTask = (taskDescription) => {
+      const taskToAdd = {
+        id: uuidv4(),
         description: taskDescription,
-        Date : Date, 
-        Completed:false
+        Completed: false
+      };
+      const currentTasks = this.state.tasks;
+      currentTasks.push(taskToAdd);
+      this.setState({
+        tasks: currentTasks
+      })
+    };
+
+    addDatedTask = (taskDescription, Date) => {
+      const datedTaskToAdd = {
+        id: uuidv4(),
+        description: taskDescription,
+        Date: Date,
+        Completed: false
       };
       const currentDatedTasks = this.state.datedTasks;
-      currentDatedTasks.push(datedTaskToAdd); 
+      currentDatedTasks.push(datedTaskToAdd);
       this.setState({
-        datedTasks:currentDatedTasks
+        datedTasks: currentDatedTasks
       });
-  
-  };
 
-  render() {
-    return ( 
-      <div className='container'>
-        <Headernest />
-                <button 
-                  onClick={this.darkModeHandler}>
-                    Mode 
+    };
+
+    render() {
+
+      let description;
+      if (this.props.item.completed) {
+        description = (
+          
+        )
+      }
+
+
+      return (
+        <div className='container'>
+          <Headernest />
+          <button
+            onClick={this.darkModeHandler}>
+            Mode
                    </button>
-        <div className='content'>
+          <div className='content'>
 
-          <Insertionsection addTaskFunc={this.addTask} addDatedTaskFunc={this.addDatedTask} />
+            <Insertionsection addTaskFunc={this.addTask} addDatedTaskFunc={this.addDatedTask} />
 
-          <div className='row'>
-            <Leftpenguin />
-            <UndatedTasksToDoHeader taskCount={this.state.tasks.length} />
-            <RightPenguin />
-          </div>
+            <div className='row'>
+              <Leftpenguin />
+              <UndatedTasksToDoHeader taskCount={this.state.tasks.length} />
+              <RightPenguin />
+            </div>
 
-          <Tasklist jobsToDo={this.state.tasks} deleteTaskFunc={this.deleteTask} />
+            <Tasklist jobsToDo={this.state.tasks} deleteTaskFunc={this.deleteTask} compTaskFunc={this.compTask}/>
 
-          <div className='row'> 
-            <Leftpenguin />
-            <TimedTasksHeader datedTaskCount={this.state.datedTasks.length} />
-            <RightPenguin />
-          </div>
+            <div className='row'>
+              <Leftpenguin />
+              <TimedTasksHeader datedTaskCount={this.state.datedTasks.length} />
+              <RightPenguin />
+            </div>
 
-          <Datedtasklist datedJobsToDo={this.state.datedTasks} deleteTaskFunc={this.deleteDatedTask} />
-
-
-          <div className='row'>
-            <Leftpenguin />
-            <TasksSmashedHeader completedTaskCount={this.state.completedTasks.length}  />
-            <RightPenguin />
-          </div>
+            <Datedtasklist datedJobsToDo={this.state.datedTasks} deleteTaskFunc={this.deleteDatedTask} />
 
 
-          <div className='row Bordered'>
-            <Donetasklist tasksDone={this.state.completedTasks}/>
+            <div className='row'>
+              <Leftpenguin />
+              <TasksSmashedHeader completedTaskCount={this.state.completedTasks.length} />
+              <RightPenguin />
+            </div>
 
-            <NailingItPenguin />
+
+            <div className='row Bordered'>
+              <Donetasklist tasksDone={this.state.completedTasks} />
+
+              <NailingItPenguin />
+            </div>
           </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
-}
-export default App;
+  export default App;

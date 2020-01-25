@@ -13,7 +13,7 @@ class Taskline extends React.Component {
   }
   doneClicked=()=>{
     alert (`Done Task ${this.props.item.id} already ? Good Job! `)
-    this.props.CompletedTaskFunc(this.props.item.id); 
+    this.props.compTaskFunc(this.props.item.id); 
     
   }
 

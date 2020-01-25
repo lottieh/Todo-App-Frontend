@@ -15,7 +15,7 @@ class Tasklist extends React.Component {
                     this.props.jobsToDo.map(
                         (taskItem) =><Taskline item={taskItem} 
                         deleteTaskFunc={this.props.deleteTaskFunc} 
-                        compTaskFunc= {this.props.compTaskFunc} />
+                        compTaskFunc={this.props.compTaskFunc} />
                     )
                 }
 
