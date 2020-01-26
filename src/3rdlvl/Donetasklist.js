@@ -1,6 +1,5 @@
 import React from 'react';
 import TaskDone from '../1stlvl/TaskDone';
-import Loading from '../1stlvl/Loading';
 
 
 class Donetasklist extends React.Component {
@@ -12,8 +11,6 @@ class Donetasklist extends React.Component {
           {this.props.tasksDone.map(
             (taskItem) => <TaskDone item={taskItem} />)}
 
-          <Loading />
-       
 
       </div>
     )
