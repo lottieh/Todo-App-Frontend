@@ -17,7 +17,7 @@ class Taskline extends React.Component {
   }
 
   render() {
-       let description;
+    let description;
     if (this.props.item.completed) {
       description = (
         <div className="col-4  complete" > {this.props.item.description} </div>);
@@ -38,42 +38,32 @@ class Taskline extends React.Component {
       <div className='row taskline' >
 
         {/*Task*/}
-
         < div className="col-4" >
-
           {description}
-
         </div>
-
-
-        {/*Edit*/}
-        < div className="col-6 col-md-2" >
-
-          <button type="button" onClick={this.editClicked}> &#x270E; </button>
-
-        </div >
 
         {/*Important*/}
 
         < div className="col-6 col-md-2" >
+          {!this.props.item.important && (
+            <button type="button" onClick={this.starClicked}> &#9733; </button>
+          )}
+        </div>
 
-          <button type="button" onClick={this.starClicked}> &#9733; </button>
-
+        {/*Edit*/}
+        < div className="col-6 col-md-2" >
+          <button type="button" onClick={this.editClicked}> &#x270E; </button>
         </div >
 
         {/*Delete*/}
 
         < div className="col-6 col-md-2" >
-
           <button type="button" onClick={this.deleteClicked}> &#10060; </button>
-
         </div >
 
         {/*Smashed It*/}
         < div className="col-6 col-md-2" >
-
           <button type="button" onClick={this.doneClicked}> Smashed It !</button>
-
         </div >
 
       </div >

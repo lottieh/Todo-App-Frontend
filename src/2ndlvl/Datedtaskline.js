@@ -17,7 +17,7 @@ class Datedtaskline extends React.Component {
   }
 
   render() {
-let description; 
+    let description;
     if (this.props.item.important) {
       description = (
         <div className="col-4  important" > {this.props.item.description} </div>);
@@ -28,59 +28,48 @@ let description;
     return (
 
       <div className='row taskline'>
-        
-          {/*Date*/}
 
-          <div className="col-6 col-md-12">
-            03/01/2019
+        {/*Date*/}
+
+        <div className="col-6 col-md-12">
+          03/01/2019
           </div>
 
-          {/*Task*/}
+        {/*Task*/}
 
-          <div className="col-4">
-
-            {description}
-
-          </div>
-
-
-          {/*Edit*/}
-          <div className="col-6 col-md-2">
-
-            <button type="button" onClick={this.editClicked}> &#x270E; </button>
-
-          </div>
-
-          {/*Important*/}
-
-          <div className="col-6 col-md-2">
-            <button type="button" onClick={this.starClicked}> &#9733; </button>
-
-
-          </div>
-
-          {/*Delete*/}
-
-          <div className="col-6 col-md-2">
-
-            <button type="button" onClick={this.deleteClicked}> &#10060; </button>
-
-
-          </div>
-
-
-          {/*Smashed It*/}
-          <div className="col-6 col-md-2">
-
-            <button type="button" onClick={this.doneClicked}> Smashed It !</button>
-
-
-          </div>
-
-
+        <div className="col-4">
+          {description}
         </div>
 
-     
+        {/*Important*/}
+        <div className="col-6 col-md-2">
+          {!this.props.item.important && (
+            <button type="button" onClick={this.starClicked}> &#9733; </button>
+          )}
+        </div>
+
+
+        {/*Edit*/}
+        <div className="col-6 col-md-2">
+          <button type="button" onClick={this.editClicked}> &#x270E; </button>
+        </div>
+
+        {/*Delete*/}
+
+        <div className="col-6 col-md-2">
+          <button type="button" onClick={this.deleteClicked}> &#10060; </button>
+        </div>
+
+
+        {/*Smashed It*/}
+        <div className="col-6 col-md-2">
+          <button type="button" onClick={this.doneClicked}> Smashed It !</button>
+        </div>
+
+
+      </div>
+
+
     );
   }
 }

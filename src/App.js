@@ -127,7 +127,8 @@ class App extends React.Component {
     const taskToAdd = {
       id: uuidv4(),
       description: taskDescription,
-      Completed: false
+      Completed: false,
+      important:false
     };
     const currentTasks = this.state.tasks;
     currentTasks.push(taskToAdd);
@@ -141,7 +142,8 @@ class App extends React.Component {
       id: uuidv4(),
       description: taskDescription,
       Date: Date,
-      Completed: false
+      Completed: false,
+      important:false
     };
     const currentDatedTasks = this.state.datedTasks;
     currentDatedTasks.push(datedTaskToAdd);
@@ -155,11 +157,12 @@ class App extends React.Component {
 
     return (
       <div className='container'>
-        <Headernest />
         <button
           onClick={this.darkModeHandler}>
           Mode
-                   </button>
+                   </button> 
+                   <Headernest />
+       
         <div className='content'>
 
           <Insertionsection addTaskFunc={this.addTask} addDatedTaskFunc={this.addDatedTask} />
