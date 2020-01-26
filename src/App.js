@@ -26,15 +26,15 @@ class App extends React.Component {
     ],
 
     datedTasks: [
-      { id: uuidv4(), description: 'Make a cup of tea', Date: 0, Completed: false, important: false },
-      { id: uuidv4(), description: 'Write a letter of resignation', Date: 2, Completed: false, important: false }
+      { id: uuidv4(), description: 'Make a cup of tea', Date: "12/03/2020", Completed: false, important: false },
+      { id: uuidv4(), description: 'Write a letter of resignation', Date: "22/01/2020", Completed: false, important: false }
     ],
 
     completedTasks: [
-      { id: uuidv4(), description: 'Buy Christmas presents', Date: 24 / 12 / 2019, Completed: true },
-      { id: uuidv4(), description: 'Buy some cheese', Date: 0, Completed: true },
-      { id: uuidv4(), description: 'Get a new Laptop', Date: 0, Completed: true },
-      { id: uuidv4(), description: 'Read the yellow pages', Date: 0, Completed: true }
+      { id: uuidv4(), description: 'Buy Christmas presents', Completed: true },
+      { id: uuidv4(), description: 'Buy some cheese', Completed: true },
+      { id: uuidv4(), description: 'Get a new Laptop', Completed: true },
+      { id: uuidv4(), description: 'Read the yellow pages', Completed: true }
     ],
 
     darkMode: true
@@ -69,8 +69,6 @@ class App extends React.Component {
       this.setState({ completedtasks: doneTasks });
     };
 
-
-  
 
   compDateTask = (taskId) => {
     alert(`Done task ${taskId} already? Good Job!`);
@@ -153,8 +151,6 @@ class App extends React.Component {
       datedTasks: currentDatedTasks
     });
 
-
-
   };
 
   render() {
@@ -164,7 +160,7 @@ class App extends React.Component {
         <button
           onClick={this.darkModeHandler}>
           Mode
-                   </button> 
+         </button> 
                    <Headernest />
        
         <div className='content'>

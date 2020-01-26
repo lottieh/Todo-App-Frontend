@@ -32,7 +32,7 @@ class Datedtaskline extends React.Component {
         {/*Date*/}
 
         <div className="col-6 col-md-12">
-          03/01/2019
+          {this.props.item.Date}
           </div>
 
         {/*Task*/}

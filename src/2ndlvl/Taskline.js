@@ -7,6 +7,7 @@ class Taskline extends React.Component {
   }
   editClicked = () => {
     alert("Want to edit ?");
+    
   }
   starClicked = () => {
     this.props.importantTaskFunc(this.props.item.id);
