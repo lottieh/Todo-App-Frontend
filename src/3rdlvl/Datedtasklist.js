@@ -16,7 +16,9 @@ class Datedtasklist extends React.Component {
 
                 {this.props.datedJobsToDo.map(
                     (taskItem) => <Datedtaskline item={taskItem}
-                        deleteTaskFunc={this.props.deleteTaskFunc} />
+                        deleteTaskFunc={this.props.deleteTaskFunc}
+                        compTaskFunc={this.props.compTaskFunc}
+                        importantTaskFunc={this.props.importantTaskFunc} />
                 )}
     
             </div>

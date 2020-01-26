@@ -10,13 +10,21 @@ class Datedtaskline extends React.Component {
     alert("Want to edit ?");
   }
   starClicked = () => {
-    alert("Is this important ?");
+    this.props.importantTaskFunc(this.props.item.id);
   }
   doneClicked = () => {
     alert("Done already? Good Job!");
   }
 
   render() {
+let description; 
+    if (this.props.item.important) {
+      description = (
+        <div className="col-4  important" > {this.props.item.description} </div>);
+    } else {
+      description = (
+        <div className="col-4"> {this.props.item.description} </div>);
+    };
     return (
 
       <div className='row taskline'>
@@ -31,7 +39,7 @@ class Datedtaskline extends React.Component {
 
           <div className="col-4">
 
-            {this.props.item.description}
+            {description}
 
           </div>
 

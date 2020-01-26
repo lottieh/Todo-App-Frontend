@@ -9,7 +9,7 @@ class Taskline extends React.Component {
     alert("Want to edit ?");
   }
   starClicked = () => {
-    alert("Is this important ?");
+    this.props.importantTaskFunc(this.props.item.id);
   }
   doneClicked = () => {
     this.props.compTaskFunc(this.props.item.id);
@@ -17,8 +17,7 @@ class Taskline extends React.Component {
   }
 
   render() {
-
-    let description;
+       let description;
     if (this.props.item.completed) {
       description = (
         <div className="col-4  complete" > {this.props.item.description} </div>);
@@ -27,6 +26,13 @@ class Taskline extends React.Component {
         <div className="col-4"> {this.props.item.description} </div>);
     };
 
+    if (this.props.item.important) {
+      description = (
+        <div className="col-4  important" > {this.props.item.description} </div>);
+    } else {
+      description = (
+        <div className="col-4"> {this.props.item.description} </div>);
+    };
     return (
 
       <div className='row taskline' >
