@@ -65,10 +65,12 @@ class App extends React.Component {
         task.completed = true;
         break;
       }}
-    this.setState({
-      tasks: comTask
-    })
-  };
+      const doneTasks = this.state.completedTasks.push(item => item.id === taskId);
+      this.setState({ completedtasks: doneTasks });
+    };
+
+
+  
 
   compDateTask = (taskId) => {
     alert(`Done task ${taskId} already? Good Job!`);
@@ -150,6 +152,8 @@ class App extends React.Component {
     this.setState({
       datedTasks: currentDatedTasks
     });
+
+
 
   };
 

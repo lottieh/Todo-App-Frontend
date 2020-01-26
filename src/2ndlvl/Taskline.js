@@ -18,14 +18,7 @@ class Taskline extends React.Component {
 
   render() {
     let description;
-    if (this.props.item.completed) {
-      description = (
-        <div className="col-4  complete" > {this.props.item.description} </div>);
-    } else {
-      description = (
-        <div className="col-4"> {this.props.item.description} </div>);
-    };
-
+   
     if (this.props.item.important) {
       description = (
         <div className="col-4  important" > {this.props.item.description} </div>);
