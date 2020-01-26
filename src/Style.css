@@ -88,7 +88,7 @@ padding: 10px;
   text-decoration: underline; 
 }
 
-input,button, .input {
+input,button {
   border-style: dotted;
   border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
   border-color: #5cdb95;
