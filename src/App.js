@@ -99,15 +99,7 @@ class App extends React.Component {
 
     render() {
 
-      let description;
-      if (this.props.item.completed) {
-        description = (
-          
-        )
-      }
-
-
-      return (
+            return (
         <div className='container'>
           <Headernest />
           <button

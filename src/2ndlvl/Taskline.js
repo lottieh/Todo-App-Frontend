@@ -2,67 +2,77 @@ import React from 'react';
 
 class Taskline extends React.Component {
 
-  deleteClicked=()=>{
+  deleteClicked = () => {
     this.props.deleteTaskFunc(this.props.item.id);
   }
-  editClicked=()=>{
-    alert ("Want to edit ?");
+  editClicked = () => {
+    alert("Want to edit ?");
   }
-  starClicked=()=>{
-    alert ("Is this important ?");
+  starClicked = () => {
+    alert("Is this important ?");
   }
-  doneClicked=()=>{
-    alert (`Done Task ${this.props.item.id} already ? Good Job! `)
-    this.props.compTaskFunc(this.props.item.id); 
-    
+  doneClicked = () => {
+    this.props.compTaskFunc(this.props.item.id);
+
   }
 
   render() {
+
+    let description;
+    if (this.props.item.completed) {
+      description = (
+        <div className="col-4  complete" > {this.props.item.description} </div>);
+    } else {
+      description = (
+        <div className="col-4"> {this.props.item.description} </div>);
+    };
+
     return (
 
-      <div className='row taskline'>
+      <div className='row taskline' >
 
         {/*Task*/}
 
-        <div className="col-4">
-          
-      {this.props.item.description}
-        
+        < div className="col-4" >
+
+          {description}
+
         </div>
 
 
         {/*Edit*/}
-        <div className="col-6 col-md-2">
+        < div className="col-6 col-md-2" >
 
           <button type="button" onClick={this.editClicked}> &#x270E; </button>
 
-        </div>
+        </div >
 
         {/*Important*/}
 
-        <div className="col-6 col-md-2">
-          
+        < div className="col-6 col-md-2" >
+
           <button type="button" onClick={this.starClicked}> &#9733; </button>
 
-        </div>
+        </div >
 
         {/*Delete*/}
 
-        <div className="col-6 col-md-2">
-        
+        < div className="col-6 col-md-2" >
+
           <button type="button" onClick={this.deleteClicked}> &#10060; </button>
 
-        </div>
+        </div >
 
         {/*Smashed It*/}
-        <div className="col-6 col-md-2">
+        < div className="col-6 col-md-2" >
 
           <button type="button" onClick={this.doneClicked}> Smashed It !</button>
 
-        </div>
+        </div >
 
-      </div>
+      </div >
     );
   }
 }
+
 export default Taskline

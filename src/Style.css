@@ -86,9 +86,8 @@ padding: 10px;
 }
 .duedate {
   text-decoration: underline; 
-
-
 }
+
 input,button, .input {
   border-style: dotted;
   border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
@@ -108,4 +107,9 @@ input:hover, button:hover {
 
 .penguin_image {
   width: 250px;
+}
+
+.complete {
+  text-decoration: line-through;
+  color: red
 }
