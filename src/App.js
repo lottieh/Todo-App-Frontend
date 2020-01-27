@@ -65,8 +65,10 @@ class App extends React.Component {
         task.completed = true;
         break;
       }}
-      const doneTasks = this.state.completedTasks.push(item => item.id === taskId);
+      const doneTasks = this.state.completedTasks.push({ id: comTask.id, description: "Something", Completed: true});
       this.setState({ completedtasks: doneTasks });
+      console.log(this.state.completedTasks);
+      
     };
 
 
