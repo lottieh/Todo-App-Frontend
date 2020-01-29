@@ -37,7 +37,7 @@ class App extends React.Component {
       { id: uuidv4(), description: 'Read the yellow pages', Completed: true }
     ],
 
-    darkMode: true
+    // darkMode: true
   }
   //Delete Buttons
 
@@ -166,10 +166,10 @@ class App extends React.Component {
 
     return (
       <div className='container'>
-        <button
+        {/* <button
           onClick={this.darkModeHandler}>
           Mode
-         </button>
+         </button> */}
         <Headernest />
 
         <div className='content'>
