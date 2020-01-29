@@ -39,7 +39,7 @@ class App extends React.Component {
 
     darkMode: true
   }
-//Delete Buttons
+  //Delete Buttons
 
   deleteTask = (taskId) => {
     alert(`You have deleted ${taskId}`);
@@ -52,24 +52,30 @@ class App extends React.Component {
     const updatedDatedTasks = this.state.datedTasks.filter(item => item.id !== taskId);
     this.setState({ datedTasks: updatedDatedTasks });
   }
-// Complete buttons
+  // Complete buttons
   compTask = (taskId) => {
     alert(`Done task ${taskId} already? Good Job!`);
 
-    //Find task that needs updating
-    const comTask = this.state.tasks;
-    for (let i = 0; i < comTask.length; i++) {
-      const task = comTask[i];
+    let incomTask = this.state.tasks;
+    let comTask;
+    for (let i = 0; i < incomTask.length; i++) {
+      if (incomTask[i].id === taskId) {
+        comTask = incomTask[i];
+        incomTask.splice(i, 1);
 
-      if (task.id === taskId) {
-        task.completed = true;
         break;
-      }}
-      const doneTasks = this.state.completedTasks.push({ id: comTask.id, description: "Something", Completed: true});
-      this.setState({ completedtasks: doneTasks });
-      console.log(this.state.completedTasks);
-      
-    };
+      }
+    }
+    const completeTasks = this.state.completedTasks.push(comTask);
+
+
+    this.setState({
+      tasks: incomTask,
+      completedtasks: completeTasks
+    });
+    console.log(this.state.completedTasks);
+
+  };
 
 
   compDateTask = (taskId) => {
@@ -83,7 +89,8 @@ class App extends React.Component {
       if (task.id === taskId) {
         task.completed = true;
         break;
-      }}
+      }
+    }
     this.setState({
       datedTasks: comDateTask
     })
@@ -130,7 +137,7 @@ class App extends React.Component {
       id: uuidv4(),
       description: taskDescription,
       Completed: false,
-      important:false
+      important: false
     };
     const currentTasks = this.state.tasks;
     currentTasks.push(taskToAdd);
@@ -145,7 +152,7 @@ class App extends React.Component {
       description: taskDescription,
       Date: Date,
       Completed: false,
-      important:false
+      important: false
     };
     const currentDatedTasks = this.state.datedTasks;
     currentDatedTasks.push(datedTaskToAdd);
@@ -162,9 +169,9 @@ class App extends React.Component {
         <button
           onClick={this.darkModeHandler}>
           Mode
-         </button> 
-                   <Headernest />
-       
+         </button>
+        <Headernest />
+
         <div className='content'>
 
           <Insertionsection addTaskFunc={this.addTask} addDatedTaskFunc={this.addDatedTask} />
@@ -175,11 +182,11 @@ class App extends React.Component {
             <RightPenguin />
           </div>
 
-          <Tasklist 
-          jobsToDo={this.state.tasks} 
-          deleteTaskFunc={this.deleteTask} 
-          compTaskFunc={this.compTask} 
-          importantTaskFunc={this.importantTask} />
+          <Tasklist
+            jobsToDo={this.state.tasks}
+            deleteTaskFunc={this.deleteTask}
+            compTaskFunc={this.compTask}
+            importantTaskFunc={this.importantTask} />
 
           <div className='row'>
             <Leftpenguin />
@@ -187,11 +194,11 @@ class App extends React.Component {
             <RightPenguin />
           </div>
 
-          <Datedtasklist 
-          datedJobsToDo={this.state.datedTasks} 
-          deleteTaskFunc={this.deleteDatedTask}
-          compTaskFunc={this.compDatedTask} 
-          importantTaskFunc={this.importantDatedTask} />
+          <Datedtasklist
+            datedJobsToDo={this.state.datedTasks}
+            deleteTaskFunc={this.deleteDatedTask}
+            compTaskFunc={this.compDatedTask}
+            importantTaskFunc={this.importantDatedTask} />
 
 
           <div className='row'>
