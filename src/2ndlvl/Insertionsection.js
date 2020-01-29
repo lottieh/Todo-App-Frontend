@@ -30,7 +30,7 @@ class Insertionsection extends React.Component {
 
                 {/* Insertion Section TaskForm */}
 
-                <div className=" Col-sm-6" >
+                <div className=" Col-8" >
 
                     <input
                         type="text"
@@ -43,13 +43,13 @@ class Insertionsection extends React.Component {
                     </small>
                 </div>
         
-            <InsertionSectionDate />
-            <InsertionDateform />
+            {/* <InsertionSectionDate />
+            <InsertionDateform /> */}
                     
             {/*Submit button*/ }
 
 
-        <div className="col-12 col-md-1">
+        <div className="col-12 col-md-2">
             <input type="submit" value="Add" 
             //if the date is entered 
             onClick={this.addTask} 

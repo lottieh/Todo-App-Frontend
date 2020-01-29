@@ -25,16 +25,16 @@ class Taskline extends React.Component {
         <div className="col-4  important" > {this.props.item.description} </div>);
     } else {
       description = (
-        <div className="col-4"> {this.props.item.description} </div>);
+        <div className="col-6"> {this.props.item.description} </div>);
     };
     return (
 
       <div className='row taskline' >
 
         {/*Task*/}
-        < div className="col-4" >
+        
           {description}
-        </div>
+        
 
         {/*Important*/}
 
@@ -44,10 +44,10 @@ class Taskline extends React.Component {
           )}
         </div>
 
-        {/*Edit*/}
+        {/* Edit
         < div className="col-6 col-md-2" >
           <button type="button" onClick={this.editClicked}> &#x270E; </button>
-        </div >
+        </div > */}
 
         {/*Delete*/}
 

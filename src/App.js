@@ -25,10 +25,10 @@ class App extends React.Component {
 
     ],
 
-    datedTasks: [
-      { id: uuidv4(), description: 'Make a cup of tea', Date: "12/03/2020", Completed: false, important: false },
-      { id: uuidv4(), description: 'Write a letter of resignation', Date: "22/01/2020", Completed: false, important: false }
-    ],
+    // datedTasks: [
+    //   { id: uuidv4(), description: 'Make a cup of tea', Date: "12/03/2020", Completed: false, important: false },
+    //   { id: uuidv4(), description: 'Write a letter of resignation', Date: "22/01/2020", Completed: false, important: false }
+    // ],
 
     completedTasks: [
       { id: uuidv4(), description: 'Buy Christmas presents', Completed: true },
@@ -47,11 +47,11 @@ class App extends React.Component {
     this.setState({ tasks: updatedTasks });
   }
 
-  deleteDatedTask = (taskId) => {
-    alert(`You have deleted ${taskId}`);
-    const updatedDatedTasks = this.state.datedTasks.filter(item => item.id !== taskId);
-    this.setState({ datedTasks: updatedDatedTasks });
-  }
+  // deleteDatedTask = (taskId) => {
+  //   alert(`You have deleted ${taskId}`);
+  //   const updatedDatedTasks = this.state.datedTasks.filter(item => item.id !== taskId);
+  //   this.setState({ datedTasks: updatedDatedTasks });
+  // }
   // Complete buttons
   compTask = (taskId) => {
     alert(`Done task ${taskId} already? Good Job!`);
@@ -78,23 +78,23 @@ class App extends React.Component {
   };
 
 
-  compDateTask = (taskId) => {
-    alert(`Done task ${taskId} already? Good Job!`);
+  // compDateTask = (taskId) => {
+  //   alert(`Done task ${taskId} already? Good Job!`);
 
-    //Find task that needs updating
-    const comDateTask = this.state.datedTasks;
-    for (let i = 0; i < comDateTask.length; i++) {
-      const task = comDateTask[i];
+  //   //Find task that needs updating
+  //   const comDateTask = this.state.datedTasks;
+  //   for (let i = 0; i < comDateTask.length; i++) {
+  //     const task = comDateTask[i];
 
-      if (task.id === taskId) {
-        task.completed = true;
-        break;
-      }
-    }
-    this.setState({
-      datedTasks: comDateTask
-    })
-  };
+  //     if (task.id === taskId) {
+  //       task.completed = true;
+  //       break;
+  //     }
+  //   }
+  //   this.setState({
+  //     datedTasks: comDateTask
+  //   })
+  // };
 
   //  Important buttons
 
@@ -115,22 +115,22 @@ class App extends React.Component {
       tasks: impTask
     })
   };
-  importantDatedTask = (taskId) => {
-    alert(`Is task ${taskId} important?`);
+  // importantDatedTask = (taskId) => {
+  //   alert(`Is task ${taskId} important?`);
 
-    const impDatedTask = this.state.datedTasks;
-    for (let i = 0; i < impDatedTask.length; i++) {
-      const task = impDatedTask[i];
+  //   const impDatedTask = this.state.datedTasks;
+  //   for (let i = 0; i < impDatedTask.length; i++) {
+  //     const task = impDatedTask[i];
 
-      if (task.id === taskId) {
-        task.important = true;
-        break;
-      }
-    }
-    this.setState({
-      datedTasks: impDatedTask
-    })
-  };
+  //     if (task.id === taskId) {
+  //       task.important = true;
+  //       break;
+  //     }
+  //   }
+  //   this.setState({
+  //     datedTasks: impDatedTask
+  //   })
+  // };
 
   addTask = (taskDescription) => {
     const taskToAdd = {
@@ -146,21 +146,21 @@ class App extends React.Component {
     })
   };
 
-  addDatedTask = (taskDescription, Date) => {
-    const datedTaskToAdd = {
-      id: uuidv4(),
-      description: taskDescription,
-      Date: Date,
-      Completed: false,
-      important: false
-    };
-    const currentDatedTasks = this.state.datedTasks;
-    currentDatedTasks.push(datedTaskToAdd);
-    this.setState({
-      datedTasks: currentDatedTasks
-    });
+  // addDatedTask = (taskDescription, Date) => {
+  //   const datedTaskToAdd = {
+  //     id: uuidv4(),
+  //     description: taskDescription,
+  //     Date: Date,
+  //     Completed: false,
+  //     important: false
+  //   };
+  //   const currentDatedTasks = this.state.datedTasks;
+  //   currentDatedTasks.push(datedTaskToAdd);
+  //   this.setState({
+  //     datedTasks: currentDatedTasks
+  //   });
 
-  };
+  // };
 
   render() {
 
@@ -174,7 +174,7 @@ class App extends React.Component {
 
         <div className='content'>
 
-          <Insertionsection addTaskFunc={this.addTask} addDatedTaskFunc={this.addDatedTask} />
+          <Insertionsection addTaskFunc={this.addTask}  />
 
           <div className='row'>
             <Leftpenguin />
@@ -188,7 +188,7 @@ class App extends React.Component {
             compTaskFunc={this.compTask}
             importantTaskFunc={this.importantTask} />
 
-          <div className='row'>
+          {/* <div className='row'>
             <Leftpenguin />
             <TimedTasksHeader datedTaskCount={this.state.datedTasks.length} />
             <RightPenguin />
@@ -198,7 +198,7 @@ class App extends React.Component {
             datedJobsToDo={this.state.datedTasks}
             deleteTaskFunc={this.deleteDatedTask}
             compTaskFunc={this.compDatedTask}
-            importantTaskFunc={this.importantDatedTask} />
+            importantTaskFunc={this.importantDatedTask} /> */}
 
 
           <div className='row'>
