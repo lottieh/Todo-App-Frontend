@@ -17,6 +17,9 @@ class App extends React.Component {
 
 
   state = {
+
+
+
     tasks: [
       { id: uuidv4(), description: 'Write CV', Date: 0, Completed: false, important: false },
       { id: uuidv4(), description: 'Learn to Code', Date: 0, Completed: false, important: false },
@@ -36,8 +39,9 @@ class App extends React.Component {
       { id: uuidv4(), description: 'Get a new Laptop', Completed: true },
       { id: uuidv4(), description: 'Read the yellow pages', Completed: true }
     ],
-
-    // darkMode: true
+    isEditing: false,
+    description: this.props.item.description,
+    darkMode: true
   }
   //Delete Buttons
 
@@ -163,21 +167,21 @@ class App extends React.Component {
   // };
 
   editTask = (taskId, description) => {
-		// find task which needs to be updated
-		const tasks = [...this.state.tasks]; // = [...] spread syntax
-		for (let i = 0; i < tasks.length; i++) {
-			const task = tasks[i];
+    // find task which needs to be updated
+    const tasks = [...this.state.tasks]; // = [...] spread syntax
+    for (let i = 0; i < tasks.length; i++) {
+      const task = tasks[i];
 
-			if (task.id === taskId) {
-				task.description = description;
-			}
-		}
-		// update state
-		this.setState({
-			tasks: tasks
-		});
+      if (task.id === taskId) {
+        task.description = description;
+      }
+    }
+    // update state
+    this.setState({
+      tasks: tasks
+    });
   };
-  
+
   render() {
 
     return (
@@ -190,7 +194,7 @@ class App extends React.Component {
 
         <div className='content'>
 
-          <Insertionsection addTaskFunc={this.addTask}  />
+          <Insertionsection addTaskFunc={this.addTask} />
 
           <div className='row'>
             <Leftpenguin />
@@ -202,7 +206,8 @@ class App extends React.Component {
             jobsToDo={this.state.tasks}
             deleteTaskFunc={this.deleteTask}
             compTaskFunc={this.compTask}
-            importantTaskFunc={this.importantTask} />
+            importantTaskFunc={this.importantTask}
+            editTaskFunc={this.editTask} />
 
           {/* <div className='row'>
             <Leftpenguin />

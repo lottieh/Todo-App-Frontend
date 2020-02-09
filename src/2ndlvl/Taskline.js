@@ -6,9 +6,15 @@ class Taskline extends React.Component {
     this.props.deleteTaskFunc(this.props.item.id);
   }
   editClicked = () => {
-    this.props.editTaskFunc(this.props.item.id);
-    
-  }
+    this.setState({
+      isEditing: !this.state.isEditing
+    });
+    this.props.editTaskFunc(this.props.item.id, this.state.description);
+  };
+  handleChange = (event) => {
+		this.setState({ description: event.target.value });
+	};
+
   starClicked = () => {
     this.props.importantTaskFunc(this.props.item.id);
   }
@@ -19,7 +25,7 @@ class Taskline extends React.Component {
 
   render() {
     let description;
-   
+
     if (this.props.item.important) {
       description = (
         <div className="col-4  important" > {this.props.item.description} </div>);
@@ -32,9 +38,9 @@ class Taskline extends React.Component {
       <div className='row taskline' >
 
         {/*Task*/}
-        
-          {description}
-        
+
+        {description}
+
 
         {/*Important*/}
 
