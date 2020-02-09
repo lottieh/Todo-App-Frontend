@@ -6,7 +6,7 @@ class Taskline extends React.Component {
     this.props.deleteTaskFunc(this.props.item.id);
   }
   editClicked = () => {
-    alert("Want to edit ?");
+    this.props.editTaskFunc(this.props.item.id);
     
   }
   starClicked = () => {
@@ -44,10 +44,10 @@ class Taskline extends React.Component {
           )}
         </div>
 
-        {/* Edit
+        {/* Edit */}
         < div className="col-6 col-md-2" >
           <button type="button" onClick={this.editClicked}> &#x270E; </button>
-        </div > */}
+        </div >
 
         {/*Delete*/}
 
