@@ -4,7 +4,7 @@ class Taskline extends React.Component {
 
   state = {
 		isEditing: false,
-		description: this.props.item.description
+		des: this.props.item.description
   };
   
   deleteClicked = () => {
@@ -14,8 +14,9 @@ class Taskline extends React.Component {
     this.setState({
       isEditing: !this.state.isEditing
     });
-    this.props.editTaskFunc(this.props.item.id, this.state.description);
+    this.props.editTaskFunc(this.props.item.id, this.state.description)
   };
+  
   handleChange = (event) => {
 		this.setState({ description: event.target.value });
 	};
@@ -43,9 +44,16 @@ class Taskline extends React.Component {
       <div className='row taskline' >
 
         {/*Task*/}
-
-        {description}
-
+<div>       
+   {this.state.isEditing ? (
+								<form onClick={this.editClicked}>
+									<input
+										defaultValue={this.state.des}
+										onChange={this.handleChange}
+									/>
+								</form>):(
+        {description})}
+></div>
 
         {/*Important*/}
 

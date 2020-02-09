@@ -17,7 +17,7 @@ class Tasklist extends React.Component {
                         deleteTaskFunc={this.props.deleteTaskFunc} 
                         compTaskFunc={this.props.compTaskFunc}
                         editTaskFunc={this.props.editTaskFunc}
-                        importantTaskFunc={this.props.importantTaskFunc}
+                        importantTaskFunc= {this.props.importantTaskFunc}
                         />
                     )
                 }

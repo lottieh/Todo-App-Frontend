@@ -14,8 +14,6 @@ import TasksSmashedHeader from './1stlvl/TasksSmashedHeader';
 import uuidv4 from 'uuid/v4';
 
 class App extends React.Component {
-
-
   state = {
     tasks: [
       { id: uuidv4(), description: 'Write CV', Date: 0, Completed: false, important: false },
