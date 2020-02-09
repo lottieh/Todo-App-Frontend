@@ -2,6 +2,11 @@ import React from 'react';
 
 class Taskline extends React.Component {
 
+  state = {
+		isEditing: false,
+		description: this.props.item.description
+  };
+  
   deleteClicked = () => {
     this.props.deleteTaskFunc(this.props.item.id);
   }

@@ -17,9 +17,6 @@ class App extends React.Component {
 
 
   state = {
-
-
-
     tasks: [
       { id: uuidv4(), description: 'Write CV', Date: 0, Completed: false, important: false },
       { id: uuidv4(), description: 'Learn to Code', Date: 0, Completed: false, important: false },
@@ -39,8 +36,7 @@ class App extends React.Component {
       { id: uuidv4(), description: 'Get a new Laptop', Completed: true },
       { id: uuidv4(), description: 'Read the yellow pages', Completed: true }
     ],
-    isEditing: false,
-    description: this.props.item.description,
+
     darkMode: true
   }
   //Delete Buttons
@@ -56,6 +52,8 @@ class App extends React.Component {
   //   const updatedDatedTasks = this.state.datedTasks.filter(item => item.id !== taskId);
   //   this.setState({ datedTasks: updatedDatedTasks });
   // }
+
+
   // Complete buttons
   compTask = (taskId) => {
     alert(`Done task ${taskId} already? Good Job!`);
@@ -167,6 +165,7 @@ class App extends React.Component {
   // };
 
   editTask = (taskId, description) => {
+    alert(`Is task ${taskId} edited? `);
     // find task which needs to be updated
     const tasks = [...this.state.tasks]; // = [...] spread syntax
     for (let i = 0; i < tasks.length; i++) {
