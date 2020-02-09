@@ -40,7 +40,7 @@ class App extends React.Component {
   //Delete Buttons
 
   deleteTask = (taskId) => {
-    alert(`You have deleted ${taskId}`);
+    alert("No longer need that task ?");
     const updatedTasks = this.state.tasks.filter(item => item.id !== taskId);
     this.setState({ tasks: updatedTasks });
   }
@@ -54,7 +54,7 @@ class App extends React.Component {
 
   // Complete buttons
   compTask = (taskId) => {
-    alert(`Done task ${taskId} already? Good Job!`);
+    alert(`Task done already? Good Job!`);
 
     let incomTask = this.state.tasks;
     let comTask;
@@ -67,7 +67,6 @@ class App extends React.Component {
       }
     }
     const completeTasks = this.state.completedTasks.push(comTask);
-
 
     this.setState({
       tasks: incomTask,
@@ -98,9 +97,8 @@ class App extends React.Component {
 
   //  Important buttons
 
-
-  importantTask = (taskId) => {
-    alert(`Is task ${taskId} important?`);
+ importantTask = (taskId) => {
+    alert(`Task now marked as important!`);
 
     const impTask = this.state.tasks;
     for (let i = 0; i < impTask.length; i++) {
