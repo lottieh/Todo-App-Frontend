@@ -1,4 +1,6 @@
 import React from 'react';
+import Emoji from '../Emoji';
+
 
 class Taskline extends React.Component {
 
@@ -60,29 +62,30 @@ class Taskline extends React.Component {
 
         < div className="col-6 col-md-2" >
           {!this.props.item.important && (
-            <button type="button" onClick={this.starClicked}> &#9733; </button>
+          <button type="button" onClick={this.starClicked}> <Emoji symbol= "&#9733;" label= "Star"/></button> 
           )}
         </div>
 
         {/* Edit */}
         < div className="col-6 col-md-2" >
-          <button type="button" onClick={this.editClicked}> &#x270E; </button>
+        <button type="button" onClick={this.editClicked}> <Emoji symbol= "&#x270E;" label="pencil"/> </button>
         </div >
 
         {/*Delete*/}
 
         < div className="col-6 col-md-2" >
-          <button type="button" onClick={this.deleteClicked}> &#10060; </button>
+         <button type="button" onClick={this.deleteClicked}> <Emoji symbol= "&#10060;" label= "Cross"/> </button>
         </div >
 
         {/*Smashed It*/}
         < div className="col-6 col-md-2" >
-          <button type="button" onClick={this.doneClicked}> Smashed It !</button>
+        <span role="img" aria-label="Smashed It"> <button type="button" onClick={this.doneClicked}> Smashed It !</button></span>
         </div >
 
       </div >
     );
   }
 }
+
 
 export default Taskline
