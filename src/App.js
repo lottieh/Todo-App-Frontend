@@ -161,8 +161,7 @@ class App extends React.Component {
   // };
 
   editTask = (taskId, description) => {
-    alert(`Is task ${taskId} edited? `);
-    // find task which needs to be updated
+       // find task which needs to be updated
     const tasks = [...this.state.tasks]; // = [...] spread syntax
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i];

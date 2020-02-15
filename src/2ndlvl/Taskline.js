@@ -45,14 +45,15 @@ class Taskline extends React.Component {
 
         {/*Task*/}
 <div>       
-   {/* {this.state.isEditing ? (
-								<form onClick={this.editClicked}>
+   {this.state.isEditing ? (
+								<form onSubmit={this.editClicked}>
 									<input
 										defaultValue={this.state.des}
 										onChange={this.handleChange}
 									/>
-								</form>):( */}
-        {description}
+                </form>)
+                :
+        <span>{description}</span>}
 </div>
 
         {/*Important*/}
@@ -63,10 +64,10 @@ class Taskline extends React.Component {
           )}
         </div>
 
-        {/* Edit
+        {/* Edit */}
         < div className="col-6 col-md-2" >
           <button type="button" onClick={this.editClicked}> &#x270E; </button>
-        </div > */}
+        </div >
 
         {/*Delete*/}
 
