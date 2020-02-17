@@ -1,16 +1,25 @@
 import React from 'react';
+import Emoji from '../Emoji';
 
 class TaskDone extends React.Component {
 
+    undoneClicked = () => {
+        this.props.undoneTaskFunc(this.props.item.id);
+}
     render() {
         return (
 
-            <div className="col-12  col-md-6">
-                <li>
-                    {this.props.item.description}
-                </li>
-            </div>
+            <div >
+                <div className>
+                    <li>
+                        {this.props.item.description}
+                       <span> <button type="button" onClick={this.undoneClicked}> <Emoji symbol="&#x2B06;" label="Cross" /> </button>
+                   </span> </li>
+                    {/*Delete*/}
 
+
+                </div>
+            </div>
         )
     }
 }

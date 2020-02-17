@@ -97,7 +97,7 @@ class App extends React.Component {
 
   //  Important buttons
 
- importantTask = (taskId) => {
+  importantTask = (taskId) => {
     alert(`Task now marked as important!`);
 
     const impTask = this.state.tasks;
@@ -161,7 +161,7 @@ class App extends React.Component {
   // };
 
   editTask = (taskId, description) => {
-       // find task which needs to be updated
+    // find task which needs to be updated
     const tasks = [...this.state.tasks]; // = [...] spread syntax
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i];
@@ -173,37 +173,55 @@ class App extends React.Component {
     // update state
     this.setState({
       tasks: tasks
-    });
-  };
+    })};
 
-  render() {
+    undoneTask = (taskId) => {
+            let comTask = this.state.completedTasks;
+      let incompTask;
+      for (let i = 0; i < comTask.length; i++) {
+        if (comTask[i].id === taskId) {
+          incompTask = comTask[i];
+          comTask.splice(i, 1);
 
-    return (
-      <div className='container'>
-        {/* <button
+          break;
+        }
+      }
+      const incompleteTasks = this.state.tasks.push(incompTask);
+
+      this.setState({
+        completedTasks: comTask,
+        incompTasks: incompleteTasks
+      });
+    };
+
+    render() {
+
+      return (
+        <div className='container'>
+          {/* <button
           onClick={this.darkModeHandler}>
           Mode
          </button> */}
-        <Headernest />
+          <Headernest />
 
-        <div className='content'>
+          <div className='content'>
 
-          <Insertionsection addTaskFunc={this.addTask} />
+            <Insertionsection addTaskFunc={this.addTask} />
 
-          <div className='row'>
-            <Leftpenguin />
-            <UndatedTasksToDoHeader taskCount={this.state.tasks.length} />
-            <RightPenguin />
-          </div>
+            <div className='row'>
+              <Leftpenguin />
+              <UndatedTasksToDoHeader taskCount={this.state.tasks.length} />
+              <RightPenguin />
+            </div>
 
-          <Tasklist
-            jobsToDo={this.state.tasks}
-            deleteTaskFunc={this.deleteTask}
-            compTaskFunc={this.compTask}
-            importantTaskFunc={this.importantTask}
-            editTaskFunc={this.editTask} />
+            <Tasklist
+              jobsToDo={this.state.tasks}
+              deleteTaskFunc={this.deleteTask}
+              compTaskFunc={this.compTask}
+              importantTaskFunc={this.importantTask}
+              editTaskFunc={this.editTask} />
 
-          {/* <div className='row'>
+            {/* <div className='row'>
             <Leftpenguin />
             <TimedTasksHeader datedTaskCount={this.state.datedTasks.length} />
             <RightPenguin />
@@ -216,21 +234,22 @@ class App extends React.Component {
             importantTaskFunc={this.importantDatedTask} /> */}
 
 
-          <div className='row'>
-            <Leftpenguin />
-            <TasksSmashedHeader completedTaskCount={this.state.completedTasks.length} />
-            <RightPenguin />
-          </div>
+            <div className='row'>
+              <Leftpenguin />
+              <TasksSmashedHeader completedTaskCount={this.state.completedTasks.length} />
+              <RightPenguin />
+            </div>
 
 
-          <div className='row Bordered'>
-            <Donetasklist tasksDone={this.state.completedTasks} />
+            <div className='row Bordered'>
+              <Donetasklist tasksDone={this.state.completedTasks} 
+              undoneTaskFunc={this.undoneTask}/>
 
-            <NailingItPenguin />
+              <NailingItPenguin />
+            </div>
           </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
-}
-export default App;
+  export default App;
