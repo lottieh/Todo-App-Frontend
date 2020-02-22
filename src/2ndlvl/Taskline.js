@@ -39,7 +39,7 @@ class Taskline extends React.Component {
         <div className="col-4  important" > {this.props.item.description} </div>);
     } else {
       description = (
-        <div className="col-6"> {this.props.item.description} </div>);
+        <div className="col-4"> {this.props.item.description} </div>);
     };
     return (
 
