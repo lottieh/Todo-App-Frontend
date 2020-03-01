@@ -30,6 +30,21 @@ class App extends React.Component {
 
     darkMode: true
   }
+
+  componentDidMount = () => {
+    // Fetch tasks from API
+    axios.get('https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL')
+    .then((response) => {
+      // handle success
+      this.setState({
+        tasks: response.data.tasks
+      })
+    })
+    .catch((error) => {
+      // handle error
+      console.error(error);
+    });
+  }
   //Delete Buttons
 
   deleteTask = (taskId) => {
