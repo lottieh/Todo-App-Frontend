@@ -47,9 +47,9 @@ class App extends React.Component {
   }
   //Delete Buttons
 
-  deleteTask = (taskId) => {
+  deleteTask = (taskID) => {
     alert("No longer need that task ?");
-    const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskId);
+    const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskID);
     this.setState({ tasks: updatedTasks });
   }
 
@@ -61,13 +61,13 @@ class App extends React.Component {
 
 
   // Complete buttons
-  compTask = (taskId) => {
+  compTask = (taskID) => {
     alert(`Task done already? Good Job!`);
 
     let incomTask = this.state.tasks;
     let comTask;
     for (let i = 0; i < incomTask.length; i++) {
-      if (incomTask[i].taskId === taskId) {
+      if (incomTask[i].taskId === taskID) {
         comTask = incomTask[i];
         incomTask.splice(i, 1);
 
@@ -105,14 +105,14 @@ class App extends React.Component {
 
   //  Important buttons
 
-  importantTask = (taskId) => {
+  importantTask = (taskID) => {
     alert(`Task now marked as important!`);
 
     const impTask = this.state.tasks;
     for (let i = 0; i < impTask.length; i++) {
       const task = impTask[i];
 
-      if (task.id === taskId) {
+      if (task.taskId === taskID) {
         task.important = true;
         break;
       }
@@ -121,14 +121,14 @@ class App extends React.Component {
       tasks: impTask
     })
   };
-  // importantDatedTask = (taskId) => {
-  //   alert(`Is task ${taskId} important?`);
+  // importantDatedTask = (taskID) => {
+  //   alert(`Is task ${taskID} important?`);
 
   //   const impDatedTask = this.state.datedTasks;
   //   for (let i = 0; i < impDatedTask.length; i++) {
   //     const task = impDatedTask[i];
 
-  //     if (task.id === taskId) {
+  //     if (task.taskId === taskID) {
   //       task.important = true;
   //       break;
   //     }
@@ -140,7 +140,7 @@ class App extends React.Component {
 
   addTask = (taskDescription) => {
     const taskToAdd = {
-      id: uuidv4(),
+      taskId: uuidv4(),
       description: taskDescription,
       Completed: false,
       important: false
@@ -154,7 +154,7 @@ class App extends React.Component {
 
   // addDatedTask = (taskDescription, Date) => {
   //   const datedTaskToAdd = {
-  //     id: uuidv4(),
+  //     taskId: uuidv4(),
   //     description: taskDescription,
   //     Date: Date,
   //     Completed: false,
@@ -168,13 +168,13 @@ class App extends React.Component {
 
   // };
 
-  editTask = (taskId, description) => {
+  editTask = (taskID, description) => {
     // find task which needs to be updated
     const tasks = [...this.state.tasks]; // = [...] spread syntax
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i];
 
-      if (task.id === taskId) {
+      if (task.taskid === taskID) {
         task.description = description;
       }
     }
@@ -184,11 +184,11 @@ class App extends React.Component {
     })
   };
 
-  undoneTask = (taskId) => {
+  undoneTask = (taskID) => {
     let comTask = this.state.completedTasks;
     let incompTask;
     for (let i = 0; i < comTask.length; i++) {
-      if (comTask[i].id === taskId) {
+      if (comTask[i].taskId === taskID) {
         incompTask = comTask[i];
         comTask.splice(i, 1);
 

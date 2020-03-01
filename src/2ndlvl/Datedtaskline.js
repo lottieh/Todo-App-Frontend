@@ -4,13 +4,13 @@ class Datedtaskline extends React.Component {
 
 
   deleteClicked = () => {
-    this.props.deleteTaskFunc(this.props.item.id);
+    this.props.deleteTaskFunc(this.props.item.taskId);
   }
   editClicked = () => {
     alert("Want to edit ?");
   }
   starClicked = () => {
-    this.props.importantTaskFunc(this.props.item.id);
+    this.props.importantTaskFunc(this.props.item.taskId);
   }
   doneClicked = () => {
     alert("Done already? Good Job!");
