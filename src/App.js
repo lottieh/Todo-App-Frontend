@@ -16,12 +16,7 @@ import uuidv4 from 'uuid/v4';
 class App extends React.Component {
   state = {
     tasks: [
-      { id: uuidv4(), description: 'Write CV', Date: 0, Completed: false, important: false },
-      { id: uuidv4(), description: 'Learn to Code', Date: 0, Completed: false, important: false },
-      { id: uuidv4(), description: 'Find a Flat', Date: 0, Completed: false, important: false },
-      { id: uuidv4(), description: 'Test it', Completed: true, important: false },
-
-    ],
+          ],
 
     // datedTasks: [
     //   { id: uuidv4(), description: 'Make a cup of tea', Date: "12/03/2020", Completed: false, important: false },
@@ -29,10 +24,7 @@ class App extends React.Component {
     // ],
 
     completedTasks: [
-      { id: uuidv4(), description: 'Buy Christmas presents', Completed: true },
-      { id: uuidv4(), description: 'Buy some cheese', Completed: true },
-      { id: uuidv4(), description: 'Get a new Laptop', Completed: true },
-      { id: uuidv4(), description: 'Read the yellow pages', Completed: true }
+     
     ],
 
     darkMode: true
