@@ -34,17 +34,18 @@ class App extends React.Component {
   componentDidMount = () => {
     // Fetch tasks from API
     axios.get('https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL')
-    .then((response) => {
-      // handle success
-      this.setState({
-        tasks: response.data.tasks
+      .then((response) => {
+        // handle success
+        this.setState({
+          tasks: response.data.tasks
+        })
       })
-    })
-    .catch((error) => {
-      // handle error
-      console.error(error);
-    });
+      .catch((error) => {
+        // handle error
+        console.error(error);
+      });
   }
+
   //Delete Buttons
 
   deleteTask = (taskID) => {
@@ -139,17 +140,44 @@ class App extends React.Component {
   // };
 
   addTask = (taskDescription) => {
+
+    //Task to add
+
     const taskToAdd = {
       taskId: uuidv4(),
       description: taskDescription,
-      Completed: false,
-      important: false
+      dueDATE: "0000-00-00",
+      completed: 0,
+      important: 0,
+      del: 0,
+      userid: "1"
     };
-    const currentTasks = this.state.tasks;
-    currentTasks.push(taskToAdd);
-    this.setState({
-      tasks: currentTasks
-    })
+
+    axios.post('https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL', taskToAdd)
+     // handle success
+      .then((response) => {
+        
+        console.log(JSON.stringify(response.data))
+
+        // Get current list of tasks
+        const currentTasks = this.state.tasks;
+
+        // Add the new task to the array by pushing
+        currentTasks.push(taskToAdd);
+
+        // Update state
+        this.setState({
+          tasks: currentTasks
+        });
+
+      })
+      // handle error
+      .catch((error) => {
+        
+        console.error(error);
+      });
+
+
   };
 
   // addDatedTask = (taskDescription, Date) => {
