@@ -51,9 +51,9 @@ class App extends React.Component {
 
     axios.delete(
       `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}`
-      )
+    )
 
-     .then(response => {
+      .then(response => {
         const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskID);
         this.setState({ tasks: updatedTasks });
       })
@@ -76,22 +76,32 @@ class App extends React.Component {
     alert(`Task done already? Good Job!`);
 
     let incomTask = this.state.tasks;
-    
-    let comTask;
-    for (let i = 0; i < incomTask.length; i++) {
-      if (incomTask[i].taskId === taskID) {
-        comTask = incomTask[i];
-        incomTask.splice(i, 1);
+    axios.put(
+      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}`
+    )
 
-        break;
-      }
-    }
-    const completeTasks = this.state.completedTasks.push(comTask);
+      .then(response => {
+        let comTask;
+        for (let i = 0; i < incomTask.length; i++) {
+          if (incomTask[i].taskId === taskID) {
+            comTask = incomTask[i];
+            incomTask.splice(i, 1);
 
-    this.setState({
-      tasks: incomTask,
-      completedtasks: completeTasks
-    });
+            break;
+          }
+        }
+        const completeTasks = this.state.completedTasks.push(comTask);
+
+        this.setState({
+          tasks: incomTask,
+          completedtasks: completeTasks
+        });
+      })
+      .catch((error) => {
+        // handle error
+        console.error(error);
+      });
+
     console.log(this.state.completedTasks);
 
   };
@@ -119,19 +129,34 @@ class App extends React.Component {
 
   importantTask = (taskID) => {
     alert(`Task now marked as important!`);
+    axios.put(
+      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}, {
+        important: '1'
+      }`
+    )
 
-    const impTask = this.state.tasks;
-    for (let i = 0; i < impTask.length; i++) {
-      const task = impTask[i];
-
-      if (task.taskId === taskID) {
-        task.important = true;
-        break;
-      }
-    }
-    this.setState({
-      tasks: impTask
-    })
+      .then(response => {
+        //impTask is the current tasks list
+        const impTask = this.state.tasks;
+        // cycle through until we reach the right task
+        for (let i = 0; i < impTask.length; i++) {
+          const task = impTask[i];
+//when we reach our task
+          if (task.taskId === taskID) {
+            //task.important set to true
+            task.important = true;
+            break;
+          }
+        };
+        //Set the state
+        this.setState({
+          tasks: impTask
+        })
+      })
+      .catch((error) => {
+        // handle error
+        console.error(error);
+      });
   };
   // importantDatedTask = (taskID) => {
   //   alert(`Is task ${taskID} important?`);
