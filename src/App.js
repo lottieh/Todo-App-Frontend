@@ -18,12 +18,10 @@ class App extends React.Component {
   state = {
     tasks: [
     ],
-
     // datedTasks: [
     //   { id: uuidv4(), description: 'Make a cup of tea', Date: "12/03/2020", Completed: false, important: false },
     //   { id: uuidv4(), description: 'Write a letter of resignation', Date: "22/01/2020", Completed: false, important: false }
     // ],
-
     completedTasks: [
 
     ],
@@ -50,8 +48,20 @@ class App extends React.Component {
 
   deleteTask = (taskID) => {
     alert("No longer need that task ?");
-    const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskID);
-    this.setState({ tasks: updatedTasks });
+
+    axios.delete(
+      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}`
+      )
+
+     .then(response => {
+        const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskID);
+        this.setState({ tasks: updatedTasks });
+      })
+      .catch((error) => {
+        // handle error
+        console.error(error);
+      });
+
   }
 
   // deleteDatedTask = (taskId) => {
@@ -66,6 +76,7 @@ class App extends React.Component {
     alert(`Task done already? Good Job!`);
 
     let incomTask = this.state.tasks;
+    
     let comTask;
     for (let i = 0; i < incomTask.length; i++) {
       if (incomTask[i].taskId === taskID) {
@@ -154,9 +165,9 @@ class App extends React.Component {
     };
 
     axios.post('https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL', taskToAdd)
-     // handle success
+      // handle success
       .then((response) => {
-        
+
         // Get current list of tasks
         const currentTasks = this.state.tasks;
 
@@ -171,7 +182,7 @@ class App extends React.Component {
       })
       // handle error
       .catch((error) => {
-        
+
         console.error(error);
       });
 
