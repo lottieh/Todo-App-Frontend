@@ -1,5 +1,4 @@
 import React from 'react';
-import DatePicker from 'react-date-picker';
 
 class InsertionDateform extends React.Component {
 
