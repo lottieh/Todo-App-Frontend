@@ -157,8 +157,6 @@ class App extends React.Component {
      // handle success
       .then((response) => {
         
-        console.log(JSON.stringify(response.data))
-
         // Get current list of tasks
         const currentTasks = this.state.tasks;
 
