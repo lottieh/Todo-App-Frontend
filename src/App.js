@@ -12,6 +12,7 @@ import RightPenguin from './1stlvl/RightPenguin';
 import TasksSmashedHeader from './1stlvl/TasksSmashedHeader';
 import uuidv4 from 'uuid/v4';
 import axios from 'axios';
+import ThemeSwitch from 'react-theme-switch';
 
 class App extends React.Component {
   state = {
@@ -60,7 +61,7 @@ class App extends React.Component {
   }
 
   // Complete buttons
-  compTask = (taskID) => {
+  compTask = (taskID,) => {
     alert(`Task done already? Good Job!`);
 
     let incomTask = this.state.tasks;
@@ -99,13 +100,9 @@ class App extends React.Component {
 
   importantTask = (taskID) => {
     alert(`Task now marked as important!`);
-    axios.put(
-      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}, {
-        important: '1'
-      }`
-    )
+    
 
-      .then(response => {
+      
         //impTask is the current tasks list
         const impTask = this.state.tasks;
         // cycle through until we reach the right task
@@ -116,8 +113,14 @@ class App extends React.Component {
             //task.important set to true
             task.important = true;
             break;
-          }
-        };
+          }};
+          axios.put(
+      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}, {
+        important: '1'
+      }`
+    )
+    .then(response => {
+        
         //Set the state
         this.setState({
           tasks: impTask
@@ -207,10 +210,7 @@ class App extends React.Component {
 
     return (
       <div className='container'>
-        {/* <button
-          onClick={this.darkModeHandler}>
-          Mode
-         </button> */}
+       <ThemeSwitch/>
         <Headernest />
 
         <div className='content'>
