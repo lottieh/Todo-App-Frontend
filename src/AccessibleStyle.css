@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Annie%20Use%20Your%20Telescope);
+
+.container {
+  max-width: 100%;
+}
+
+/* .content {
+  border-style: dotted;
+  border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
+  padding: 10px 10px 10px 10px;
+  margin: auto 60px;
+} */
+body {
+  background-color: #ededed;
+  color: #000000;
+  font-family: "Annie Use Your Telescope", cursive;
+  font-size: 16pt;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+h1 {
+  border-style: dotted;
+  height: 60px;
+  vertical-align: middle;
+  display: table-cell;
+  border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
+  text-align: center;
+  width: 500px;
+  margin: 30px auto;
+  background-color: rgb(130, 223, 223);
+  padding: 0px 20px 0px 20px;
+}
+
+h2 {
+  width: 300px;
+  border-style: dotted;
+  border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
+  text-align: center;
+  margin: 30px auto;
+  background-color: rgb(130, 223, 223);
+  padding: 0px 20px 0px 20px;
+}
+
+.topl {
+  width: 82px;
+  height: 75px;
+  margin-left: 200px;
+  margin-right: 20px;
+}
+.topr {
+  width: 82px;
+  height: 75px;
+  margin-right: 200px;
+  margin-left: 20px;
+}
+
+.Insertion_Section {
+  border-style: dotted;
+  border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
+  padding: 10px 10px 10px 10px;
+  margin: auto 60px;
+  justify-content: center;
+}
+
+.Bordered {
+  margin: auto 60px;
+  /* text-align: center; */
+  border-style: dotted;
+  color: #000000;
+  border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
+  padding: 20px 30px 20px 30px;
+  display: grid;
+  justify-content: center;
+}
+
+.taskline {
+padding: 10px; 
+}
+.duedate {
+  text-decoration: underline; 
+}
+
+input,button {
+  border-style: dotted;
+  border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
+  border-color:  #000000;
+  background-color: rgb(130, 223, 223);
+  padding: 0px 15px 0px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  color:  #000000;
+  background-color:  rgb(130, 223, 223);
+
+ }
+
+input:hover, button:hover {
+  background-color: #eaadf1;
+}
+
+.penguin_image {
+  width: 250px;
+}
+
+.important {
+  font-weight: bold;
+  color: red
+}
