@@ -61,7 +61,7 @@ class App extends React.Component {
   }
 
   // Complete buttons
-  compTask = (taskID,) => {
+  compTask = (taskID, ) => {
     alert(`Task done already? Good Job!`);
 
     let incomTask = this.state.tasks;
@@ -98,12 +98,9 @@ class App extends React.Component {
 
   //  Important buttons
 
-  importantTask = (taskID) => {
+  importantTask = (taskID, important) => {
     alert(`Task now marked as important!`);
-    
-
-      
-        //impTask is the current tasks list
+    //impTask is the current tasks list
         const impTask = this.state.tasks;
         // cycle through until we reach the right task
         for (let i = 0; i < impTask.length; i++) {
@@ -111,20 +108,24 @@ class App extends React.Component {
           //when we reach our task
           if (task.taskId === taskID) {
             //task.important set to true
-            task.important = true;
+            task.important = "1";
             break;
-          }};
-          axios.put(
-      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}, {
-        important: '1'
-      }`
-    )
-    .then(response => {
+          }
+        };
         
         //Set the state
+        
+        axios.put(
+      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}, "important"`
+    )
+      .then(response => {
+
+
+        
         this.setState({
           tasks: impTask
         })
+
       })
       .catch((error) => {
         // handle error
@@ -171,20 +172,53 @@ class App extends React.Component {
 
   };
 
-  editTask = (taskID, description) => {
+  editTask = (taskID, taskDescription) => {
+
+    //Task to edit
+
+    const taskToEdit = {
+      taskId: taskID,
+      description: taskDescription,
+      dueDATE: "0000-00-00",
+      completed: 0,
+      important: 0,
+      del: 0,
+      userid: "1"
+    };
     // find task which needs to be updated
     const tasks = [...this.state.tasks]; // = [...] spread syntax
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i];
 
       if (task.taskid === taskID) {
-        task.description = description;
+        task.description = taskDescription;
       }
     }
-    // update state
-    this.setState({
-      tasks: tasks
-    })
+    axios.put('https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL', taskToEdit)
+      // handle success
+      .then((response) => {
+
+        // Get current list of tasks
+        const currentTasks = this.state.tasks;
+
+        // Add the new task to the array by pushing
+        currentTasks.push(taskToEdit);
+
+        // Update state
+        this.setState({
+          tasks: tasks
+        });
+
+      })
+      // handle error
+      .catch((error) => {
+
+        console.error(error);
+      });
+    // // update state
+    // this.setState({
+    //   tasks: tasks
+    // })
   };
 
   undoneTask = (taskID) => {
@@ -210,7 +244,7 @@ class App extends React.Component {
 
     return (
       <div className='container'>
-       <ThemeSwitch/>
+        <ThemeSwitch />
         <Headernest />
 
         <div className='content'>
