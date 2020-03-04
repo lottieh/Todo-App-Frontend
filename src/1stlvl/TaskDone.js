@@ -10,12 +10,12 @@ class TaskDone extends React.Component {
         return (
 
             <div >
-                <div className>
+                <div className ="col-6 col-md-2">
                     <li>
                         {this.props.item.description}
                        <span> <button type="button" onClick={this.undoneClicked}> <Emoji symbol="&#x2B06;" label="Cross" /> </button>
                    </span> </li>
-                    {/*Delete*/}
+            
 
 
                 </div>

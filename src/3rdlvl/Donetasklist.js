@@ -9,7 +9,9 @@ class Donetasklist extends React.Component {
       <div className='col-12 col-md-6'>
 
         {this.props.tasksDone.map(
-          (taskItem) => <TaskDone item={taskItem}
+          (taskItem) => <TaskDone 
+          key={taskItem.taskId} 
+          item={taskItem}
             undoneTaskFunc={this.props.undoneTaskFunc} />
         )}
 
