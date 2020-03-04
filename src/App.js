@@ -61,41 +61,98 @@ class App extends React.Component {
   }
 
   // Complete buttons
-  compTask = (taskId,completed) => {
+
+   //Complete PUT API updates , but then description overwritten and doesn't save
+
+  compTask = (taskId, taskDescription, completed) => {
+
+    const taskToCom = {
+      taskId: taskId,
+      description: taskDescription,
+      dueDATE: "0000-00-00",
+      completed: 1,
+      important: 0,
+      del: 0,
+      userid: "1"
+    };
     alert(`Task done already? Good Job!`);
-        let comTask;
-        for (let i = 0; i < incomTask.length; i++) {
-          if (incomTask[i].taskId === taskId) {
-            comTask = incomTask[i];
-          }
-        }
-        const completeTasks = this.state.completedTasks.push(comTask);
-let incomTask = this.state.tasks;
-    axios.put(
-      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`
-    )
-        .then(response => {
-          
-          this.setState({
-          task: incomTask,
-          completedtasks: completeTasks
+
+    let incomTask = this.state.tasks;
+
+
+    let comTask;
+    for (let i = 0; i < incomTask.length; i++) {
+      if (incomTask[i].taskId === taskId) {
+        comTask = incomTask[i];
+        incomTask.splice(i, 1);
+        break;
+      }
+    }
+    const completeTasks = this.state.completedTasks.push(comTask);
+    axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`, taskToCom)
+
+      .then(response => {
+        let incomTask = this.state.tasks;
+        this.setState({
+          tasks: incomTask,
+
         });
       })
       .catch((error) => {
         // handle error
         console.error(error);
       });
-
     console.log(this.state.completedTasks);
-
   };
+
+  // compTask = (taskId,taskDescription,completed) => {
+
+  //   const taskToCom = {
+  //     taskId: taskId,
+  //     description: taskDescription,
+  //     dueDATE: "0000-00-00",
+  //     completed: 1,
+  //     important: 0,
+  //     del: 0,
+  //     userid: "1"
+  //   };
+  //   alert(`Task done already? Good Job!`);
+  //   let incomTask = [...this.state.tasks];   
+
+  //    for (let i = 0; i < incomTask.length; i++) {
+  //        let task =incomTask[i]; 
+  //        if (incomTask[i].taskId === taskId) {
+  //           task.completed = 1;
+  //         }
+  //       }
+  //       // const completeTasks = this.state.completedTasks.push(comTask);
+
+  //   axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`,taskToCom)
+  //       .then(response => {
+  //        // Get current list of tasks
+  //       const currentTasks = this.state.tasks;
+
+  //       // Update state
+  //       this.setState({
+  //         tasks: currentTasks
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       // handle error
+  //       console.error(error);
+  //     });
+
+  //   console.log(this.state.completedTasks);
+
+  // };
 
 
   //  Important buttons
+  //Important PUT API updates , but then description overwritten on save
 
-  importantTask = (taskId,taskDescription,Important) => {
+  importantTask = (taskId, taskDescription, Important) => {
     alert(`Task now marked as important!`);
-//Task to make important
+    //Task to make important
     const taskToImport = {
       taskId: taskId,
       description: taskDescription, //same description as before,
@@ -107,28 +164,28 @@ let incomTask = this.state.tasks;
     };
 
     //impTask is the current tasks list
-        const impTask = this.state.tasks;
-        // cycle through until we reach the right task
-        for (let i = 0; i < impTask.length; i++) {
-          const task = impTask[i];
-          //when we reach our task
-          if (task.taskId === taskId) {
-            //task.important set to true
-            task.important = "1";
-        
-          }
-        };
-           
-        axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`,taskToImport)
+    const impTask = this.state.tasks;
+    // cycle through until we reach the right task
+    for (let i = 0; i < impTask.length; i++) {
+      const task = impTask[i];
+      //when we reach our task
+      if (task.taskId === taskId) {
+        //task.important set to true
+        task.important = "1";
+
+      }
+    };
+
+    axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`, taskToImport)
 
       .then(response => {
-     // Get current list of tasks
-     const currentTasks = this.state.tasks;
+        // Get current list of tasks
+        const currentTasks = this.state.tasks;
 
-     // Update state
-     this.setState({
-       tasks: currentTasks
-     });
+        // Update state
+        this.setState({
+          tasks: currentTasks
+        });
         console.log(`${taskId}`)
 
       })
@@ -217,7 +274,7 @@ let incomTask = this.state.tasks;
 
         console.error(error);
       });
-    
+
   };
 
   undoneTask = (taskID) => {
