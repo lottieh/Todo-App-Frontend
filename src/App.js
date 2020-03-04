@@ -93,12 +93,12 @@ let incomTask = this.state.tasks;
 
   //  Important buttons
 
-  importantTask = (taskId,important,description) => {
+  importantTask = (taskId,taskDescription,Important) => {
     alert(`Task now marked as important!`);
-
+//Task to make important
     const taskToImport = {
       taskId: taskId,
-      description: description, //same description as before,
+      description: taskDescription, //same description as before,
       dueDATE: "0000-00-00",
       completed: 0,
       important: 1,
@@ -122,10 +122,13 @@ let incomTask = this.state.tasks;
         axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`,taskToImport)
 
       .then(response => {
-      //Set the state
-        this.setState({
-          tasks: impTask
-        })
+     // Get current list of tasks
+     const currentTasks = this.state.tasks;
+
+     // Update state
+     this.setState({
+       tasks: currentTasks
+     });
         console.log(`${taskId}`)
 
       })
