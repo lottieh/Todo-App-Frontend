@@ -67,6 +67,7 @@ h2 {
   /* text-align: center; */
   border-style: dotted;
   color: #5cdb95;
+  float: center;
   border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
   padding: 20px 30px 20px 30px;
   display: grid;
@@ -82,13 +83,14 @@ h2 {
   padding: 20px 20px 20px 20px;
 }
 .taskline {
-padding: 10px; 
+  padding: 10px;
 }
 .duedate {
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
-input,button {
+input,
+button {
   border-style: dotted;
   border-radius: 1em 4em 1em 4em/1em 4em 1em 4em;
   border-color: #5cdb95;
@@ -98,10 +100,10 @@ input,button {
   font-size: 16px;
   color: #5cdb95;
   background-color: darkcyan;
+}
 
- }
-
-input:hover, button:hover {
+input:hover,
+button:hover {
   background-color: #bd67c9;
 }
 
@@ -111,5 +113,5 @@ input:hover, button:hover {
 
 .important {
   font-weight: bold;
-  color: red
+  color: red;
 }

@@ -61,28 +61,23 @@ class App extends React.Component {
   }
 
   // Complete buttons
-  compTask = (taskID, ) => {
+  compTask = (taskId,completed) => {
     alert(`Task done already? Good Job!`);
-
-    let incomTask = this.state.tasks;
-    axios.put(
-      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}`
-    )
-
-      .then(response => {
         let comTask;
         for (let i = 0; i < incomTask.length; i++) {
-          if (incomTask[i].taskId === taskID) {
+          if (incomTask[i].taskId === taskId) {
             comTask = incomTask[i];
-            incomTask.splice(i, 1);
-
-            break;
           }
         }
         const completeTasks = this.state.completedTasks.push(comTask);
-
-        this.setState({
-          tasks: incomTask,
+let incomTask = this.state.tasks;
+    axios.put(
+      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`
+    )
+        .then(response => {
+          
+          this.setState({
+          task: incomTask,
           completedtasks: completeTasks
         });
       })
@@ -98,33 +93,40 @@ class App extends React.Component {
 
   //  Important buttons
 
-  importantTask = (taskID, important) => {
+  importantTask = (taskId,important,description) => {
     alert(`Task now marked as important!`);
+
+    const taskToImport = {
+      taskId: taskId,
+      description: description, //same description as before,
+      dueDATE: "0000-00-00",
+      completed: 0,
+      important: 1,
+      del: 0,
+      userid: "1"
+    };
+
     //impTask is the current tasks list
         const impTask = this.state.tasks;
         // cycle through until we reach the right task
         for (let i = 0; i < impTask.length; i++) {
           const task = impTask[i];
           //when we reach our task
-          if (task.taskId === taskID) {
+          if (task.taskId === taskId) {
             //task.important set to true
             task.important = "1";
-            break;
+        
           }
         };
-        
-        //Set the state
-        
-        axios.put(
-      `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}, "important"`
-    )
+           
+        axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`,taskToImport)
+
       .then(response => {
-
-
-        
+      //Set the state
         this.setState({
           tasks: impTask
         })
+        console.log(`${taskId}`)
 
       })
       .catch((error) => {
@@ -172,12 +174,12 @@ class App extends React.Component {
 
   };
 
-  editTask = (taskID, taskDescription) => {
+  editTask = (taskId, taskDescription) => {
 
     //Task to edit
 
     const taskToEdit = {
-      taskId: taskID,
+      taskId: taskId,
       description: taskDescription,
       dueDATE: "0000-00-00",
       completed: 0,
@@ -190,23 +192,20 @@ class App extends React.Component {
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i];
 
-      if (task.taskid === taskID) {
+      if (task.taskId === taskId) {
         task.description = taskDescription;
       }
     }
-    axios.put('https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL', taskToEdit)
+    axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`, taskToEdit)
       // handle success
       .then((response) => {
 
         // Get current list of tasks
         const currentTasks = this.state.tasks;
 
-        // Add the new task to the array by pushing
-        currentTasks.push(taskToEdit);
-
         // Update state
         this.setState({
-          tasks: tasks
+          tasks: currentTasks
         });
 
       })
@@ -215,10 +214,7 @@ class App extends React.Component {
 
         console.error(error);
       });
-    // // update state
-    // this.setState({
-    //   tasks: tasks
-    // })
+    
   };
 
   undoneTask = (taskID) => {
