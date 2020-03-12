@@ -24,7 +24,7 @@ class Taskline extends React.Component {
   };
 
   starClicked = () => {
-    this.props.importantTaskFunc(this.props.item.taskId);
+    this.props.importantTaskFunc(this.props.item.taskId,this.props.item.description);
   }
   doneClicked = () => {
     this.props.compTaskFunc(this.props.item.taskId);

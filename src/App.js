@@ -162,6 +162,7 @@ class App extends React.Component {
       del: 0,
       userid: "1"
     };
+console.log(taskToImport)
 
     //impTask is the current tasks list
     const impTask = this.state.tasks;
@@ -301,6 +302,7 @@ class App extends React.Component {
     return (
       <div className='container'>
         <ThemeSwitch />
+    
         <Headernest />
 
         <div className='content'>
