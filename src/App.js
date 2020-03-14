@@ -62,7 +62,7 @@ class App extends React.Component {
 
   // Complete buttons
 
-   //Complete PUT API updates , but then description overwritten and doesn't save
+  //Complete PUT API updates , but then description overwritten and doesn't save
 
   compTask = (taskId, taskDescription, completed) => {
 
@@ -122,7 +122,7 @@ class App extends React.Component {
   //    for (let i = 0; i < incomTask.length; i++) {
   //        let task =incomTask[i]; 
   //        if (incomTask[i].taskId === taskId) {
-  //           task.completed = 1;
+  //           task.completed = "1";
   //         }
   //       }
   //       // const completeTasks = this.state.completedTasks.push(comTask);
@@ -148,9 +148,8 @@ class App extends React.Component {
 
 
   //  Important buttons
-  //Important PUT API updates , but then description overwritten on save
-
-  importantTask = (taskId, taskDescription, Important) => {
+  
+  importantTask = (taskId, taskDescription) => {
     alert(`Task now marked as important!`);
     //Task to make important
     const taskToImport = {
@@ -162,7 +161,7 @@ class App extends React.Component {
       del: 0,
       userid: "1"
     };
-console.log(taskToImport)
+    console.log(taskToImport)
 
     //impTask is the current tasks list
     const impTask = this.state.tasks;
@@ -173,7 +172,6 @@ console.log(taskToImport)
       if (task.taskId === taskId) {
         //task.important set to true
         task.important = "1";
-
       }
     };
 
@@ -195,6 +193,8 @@ console.log(taskToImport)
         console.error(error);
       });
   };
+
+  //Adding tasks
 
   addTask = (taskDescription) => {
 
@@ -234,6 +234,7 @@ console.log(taskToImport)
 
 
   };
+//Editing Tasks
 
   editTask = (taskId, taskDescription) => {
 
@@ -302,7 +303,7 @@ console.log(taskToImport)
     return (
       <div className='container'>
         <ThemeSwitch />
-    
+
         <Headernest />
 
         <div className='content'>
