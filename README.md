@@ -1,10 +1,6 @@
 # Nailing It To Do App
 
-This project was to create a To-do app from scratch and is my first time using mnay of the software and concepts used.
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This project was to create a To-do app from scratch and is my first time using many of the software and concepts used.
 
 ### Prerequisites
 
