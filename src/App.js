@@ -39,7 +39,17 @@ class App extends React.Component {
           this.setState({
             completedTasks: response.data.tasks
         })
-      }})
+      }
+      // (response.data.completed = 1?
+      //   // handle success
+      //   this.setState({
+      //     tasks: response.data.tasks
+      //   }):
+      //     this.setState({
+      //       completedTasks: response.data.tasks
+      //   }))
+    
+    })
       .catch((error) => {
         // handle error
         console.error(error);
