@@ -28,12 +28,18 @@ class App extends React.Component {
   componentDidMount = () => {
     // Fetch tasks from API
     axios.get('https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL')
-      .then((response) => {
+      
+    .then((response) => {
+      if (response.data.completed = 1){
         // handle success
         this.setState({
           tasks: response.data.tasks
+        })}
+        else {
+          this.setState({
+            completedTasks: response.data.tasks
         })
-      })
+      }})
       .catch((error) => {
         // handle error
         console.error(error);
@@ -93,8 +99,10 @@ class App extends React.Component {
 
       .then(response => {
         let incomTask = this.state.tasks;
+        let compTasks = this.state.completedTasks
         this.setState({
           tasks: incomTask,
+          completedTasks: compTasks
 
         });
       })
