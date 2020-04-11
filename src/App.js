@@ -32,18 +32,18 @@ class App extends React.Component {
       .then((response) => {
         //tasks are when completed =0
         // completed tasks are when completed =1
-        var tasksToDo = response.data.tasks.filter(
-          task => task.completed.includes(0)
-          );
-        var tasksDone = response.data.tasks.filter
-        (
-          task => task.completed.includes(1)
-          );
 
+        const Tasks = response.data.tasks.filter(task =>
+          task.completed.includes(0)
+        );
+        const completedTasks = response.data.tasks.filter(task =>
+          task.completed.includes(1)
+        );
+        // handle success
         this.setState({
-          tasks: tasksToDo,
-          completedTasks: tasksDone
-        })
+          tasks: Tasks,
+          completedTasks: completedTasks
+        });
 
         // (response.data.completed = 1?
         //   // handle success
