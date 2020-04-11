@@ -28,27 +28,33 @@ class App extends React.Component {
   componentDidMount = () => {
     // Fetch tasks from API
     axios.get('https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL')
-      
-    .then((response) => {
-      //tasks are when completed =0
-      // completed tasks are when completed =1
 
+      .then((response) => {
+        //tasks are when completed =0
+        // completed tasks are when completed =1
+        var tasksToDo = response.data.tasks.filter(
+          task => task.completed.includes(0)
+          );
+        var tasksDone = response.data.tasks.filter
+        (
+          task => task.completed.includes(1)
+          );
 
         this.setState({
-          tasks: response.data.tasks,
-          completedTasks: response.data.tasks
+          tasks: tasksToDo,
+          completedTasks: tasksDone
         })
-      
-      // (response.data.completed = 1?
-      //   // handle success
-      //   this.setState({
-      //     tasks: response.data.tasks
-      //   }):
-      //     this.setState({
-      //       completedTasks: response.data.tasks
-      //   }))
-    
-    })
+
+        // (response.data.completed = 1?
+        //   // handle success
+        //   this.setState({
+        //     tasks: response.data.tasks
+        //   }):
+        //     this.setState({
+        //       completedTasks: response.data.tasks
+        //   }))
+
+      })
       .catch((error) => {
         // handle error
         console.error(error);
@@ -165,7 +171,7 @@ class App extends React.Component {
 
 
   //  Important buttons
-  
+
   importantTask = (taskId, taskDescription) => {
     alert(`Task now marked as important!`);
     //Task to make important
@@ -251,7 +257,7 @@ class App extends React.Component {
 
 
   };
-//Editing Tasks
+  //Editing Tasks
 
   editTask = (taskId, taskDescription) => {
 
