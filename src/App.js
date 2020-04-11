@@ -30,16 +30,15 @@ class App extends React.Component {
     axios.get('https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL')
       
     .then((response) => {
-      if (response.data.completed = 1){
-        // handle success
+      //tasks are when completed =0
+      // completed tasks are when completed =1
+
+
         this.setState({
-          tasks: response.data.tasks
-        })}
-        else {
-          this.setState({
-            completedTasks: response.data.tasks
+          tasks: response.data.tasks,
+          completedTasks: response.data.tasks
         })
-      }
+      
       // (response.data.completed = 1?
       //   // handle success
       //   this.setState({
