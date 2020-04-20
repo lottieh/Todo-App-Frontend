@@ -45,15 +45,6 @@ class App extends React.Component {
           completedTasks: completedTasks
         });
 
-        // (response.data.completed = 1?
-        //   // handle success
-        //   this.setState({
-        //     tasks: response.data.tasks
-        //   }):
-        //     this.setState({
-        //       completedTasks: response.data.tasks
-        //   }))
-
       })
       .catch((error) => {
         // handle error
@@ -301,23 +292,49 @@ class App extends React.Component {
 
   };
 
-  undoneTask = (taskID) => {
+
+  // incomplete buttons
+
+
+  undoneTask = (taskId, taskDescription, completed) => {
+
+    const taskToIncom = {
+      taskId: taskId,
+      description: taskDescription,
+      dueDATE: "0000-00-00",
+      completed: 0,
+      important: 0,
+      del: 0,
+      userid: "1"
+    };
+    alert(`Task done already? Good Job!`);
+
     let comTask = this.state.completedTasks;
     let incompTask;
     for (let i = 0; i < comTask.length; i++) {
-      if (comTask[i].taskId === taskID) {
+      if (comTask[i].taskId === taskId) {
         incompTask = comTask[i];
         comTask.splice(i, 1);
-
         break;
       }
     }
     const incompleteTasks = this.state.tasks.push(incompTask);
+    axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`,taskToIncom)
 
-    this.setState({
-      completedTasks: comTask,
-      incompTasks: incompleteTasks
-    });
+      .then(response => {
+        let incomTask = this.state.tasks;
+        let compTasks = this.state.completedTasks
+        this.setState({
+          tasks: incomTask,
+          completedTasks: compTasks
+
+        });
+      })
+      .catch((error) => {
+        // handle error
+        console.error(error);
+      });
+    console.log(this.state.completedTasks);
   };
 
   render() {
