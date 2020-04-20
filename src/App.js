@@ -83,7 +83,6 @@ class App extends React.Component {
 
   // Complete buttons
 
-  //Complete PUT API updates , but then description overwritten and doesn't save
 
   compTask = (taskId, taskDescription, completed) => {
 
