@@ -4,7 +4,7 @@ import Emoji from '../Emoji';
 class TaskDone extends React.Component {
 
     undoneClicked = () => {
-        this.props.undoneTaskFunc(this.props.item.taskId);
+        this.props.undoneTaskFunc(this.props.item.taskId,this.props.item.description);
 }
     render() {
         return (
