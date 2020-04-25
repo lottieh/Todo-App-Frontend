@@ -32,19 +32,6 @@ class App extends React.Component {
       .then((response) => {
         //tasks are when completed =0
         // completed tasks are when completed =1
-// if (response.data.completed=1){
-
-//   this.setState({
-//     tasks: response.data.tasks
-//   })}
-//   else {
-//     this.setState ({
-//       completedTasks: response.data.tasks
-//     })
-//   }
-// })
-
-
         const Tasks = response.data.tasks.filter(task =>
           task.completed==0
           
@@ -131,48 +118,6 @@ class App extends React.Component {
       });
     console.log(this.state.completedTasks);
   };
-
-  // compTask = (taskId,taskDescription,completed) => {
-
-  //   const taskToCom = {
-  //     taskId: taskId,
-  //     description: taskDescription,
-  //     dueDATE: "0000-00-00",
-  //     completed: 1,
-  //     important: 0,
-  //     del: 0,
-  //     userid: "1"
-  //   };
-  //   alert(`Task done already? Good Job!`);
-  //   let incomTask = [...this.state.tasks];   
-
-  //    for (let i = 0; i < incomTask.length; i++) {
-  //        let task =incomTask[i]; 
-  //        if (incomTask[i].taskId === taskId) {
-  //           task.completed = "1";
-  //         }
-  //       }
-  //       // const completeTasks = this.state.completedTasks.push(comTask);
-
-  //   axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`,taskToCom)
-  //       .then(response => {
-  //        // Get current list of tasks
-  //       const currentTasks = this.state.tasks;
-
-  //       // Update state
-  //       this.setState({
-  //         tasks: currentTasks
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       // handle error
-  //       console.error(error);
-  //     });
-
-  //   console.log(this.state.completedTasks);
-
-  // };
-
 
   //  Important buttons
 
