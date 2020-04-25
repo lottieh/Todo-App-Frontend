@@ -33,12 +33,12 @@ class App extends React.Component {
         //tasks are when completed =0
         // completed tasks are when completed =1
         const Tasks = response.data.tasks.filter(task =>
-          task.completed==0
+          task.completed===0
           
         );
         console.log(Tasks);
         const completedTasks = response.data.tasks.filter(task =>
-          task.completed==1
+          task.completed===1
         );
         // handle success
         this.setState({
