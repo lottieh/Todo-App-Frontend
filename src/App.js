@@ -43,13 +43,15 @@ class App extends React.Component {
 //     })
 //   }
 // })
+
+
         const Tasks = response.data.tasks.filter(task =>
-          task.description.includes("Boop")
+          task.completed==0
           
         );
         console.log(Tasks);
         const completedTasks = response.data.tasks.filter(task =>
-          !task.description.includes("Boop")
+          task.completed==1
         );
         // handle success
         this.setState({
