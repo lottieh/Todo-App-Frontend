@@ -56,9 +56,7 @@ class App extends React.Component {
   //Delete Buttons
 
   deleteTask = (taskID) => {
-    alert("No longer need that task ?");
-
-    axios.delete(
+       axios.delete(
       `https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskID}`
     )
 
@@ -87,9 +85,7 @@ class App extends React.Component {
       del: 0,
       userid: "1"
     };
-    alert(`Task done already? Good Job!`);
-
-    let incomTask = this.state.tasks;
+        let incomTask = this.state.tasks;
 
 
     let comTask;
@@ -122,7 +118,7 @@ class App extends React.Component {
   //  Important buttons
 
   importantTask = (taskId, taskDescription) => {
-    alert(`Task now marked as important!`);
+    
     //Task to make important
     const taskToImport = {
       taskId: taskId,
@@ -266,8 +262,7 @@ class App extends React.Component {
       del: 0,
       userid: "1"
     };
-    alert(`Task done already? Good Job!`);
-
+   
     let comTask = this.state.completedTasks;
     let incompTask;
     for (let i = 0; i < comTask.length; i++) {

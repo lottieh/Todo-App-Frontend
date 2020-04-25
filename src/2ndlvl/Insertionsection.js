@@ -5,11 +5,11 @@ import InsertionSectionTask from '../1stlvl/InsertionSectionTask';
 class Insertionsection extends React.Component {
 
     addTask = () => {
-        alert('Oooh we are adding something !!!');
+        
         this.props.addTaskFunc(this.state.taskDescription)
     }
     addDatedTask = () => {
-        alert('Oooh we are adding a dated something !!!');
+        
         this.props.addDatedTaskFunc(this.state.taskDescription)
     }
 

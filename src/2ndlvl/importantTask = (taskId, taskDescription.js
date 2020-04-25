@@ -1,5 +1,5 @@
 importantTask = (taskId, taskDescription) => {
-    alert(`Task now marked as important!`);
+   
     //Task to make important
     const taskToImport = {
       taskId: taskId,
