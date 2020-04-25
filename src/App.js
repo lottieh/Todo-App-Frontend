@@ -100,7 +100,7 @@ class App extends React.Component {
         break;
       }
     }
-    const completeTasks = this.state.completedTasks.push(comTask);
+    this.state.completedTasks.push(comTask);
     axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`, taskToCom)
 
       .then(response => {
@@ -277,7 +277,7 @@ class App extends React.Component {
         break;
       }
     }
-    const incompleteTasks = this.state.tasks.push(incompTask);
+     this.state.tasks.push(incompTask);
     axios.put(`https://yn5h3ozx7f.execute-api.eu-west-2.amazonaws.com/dev/tasksURL/${taskId}`,taskToIncom)
 
       .then(response => {
